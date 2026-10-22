@@ -47,7 +47,7 @@
   function $(sel, el) { return (el || root).querySelector(sel); }
   function modById(id) { return Q.modOf(id); }
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
-  var KIND = { conj: 'Conjugación', choice: 'Elige la correcta', sent: 'Completa la frase', sentc: 'Frase · elige', trans: 'Transformación', ident: 'Identifica el tiempo', table: 'Tabla completa' };
+  var KIND = { conj: 'Conjugación', choice: 'Elige la correcta', sent: 'Completa la frase', sentc: 'Frase · elige', trans: 'Transformación', ident: 'Identifica el tiempo', table: 'Tabla completa', fc: 'Avere o essere · elige', aux: 'Avere o essere', infin: 'Infinitivo' };
 
   /* ---------- vista actual ---------- */
   var V = { name: 'home' }, sess = null, scrollTop = true;
@@ -87,7 +87,7 @@
         else if (ms2.acc >= 0.85 && ms2.n >= 20) badge = '<span class="badge ok">Dominado</span>';
         else if (ms2.acc < 0.65) { badge = '<span class="badge bad">Reforzar</span>'; warn = true; }
         else badge = '<span class="badge gold">En buen camino</span>';
-        o += '<button class="mod" data-act="mod" data-id="' + m.id + '"><span class="t">' + m.title + '</span><div class="meter ' + (warn ? 'warn' : '') + '"><i style="width:' + pct + '%"></i></div><span class="s">' + badge + (ms2 ? ' ' + pct + '%' : '') + '</span></button>';
+        o += '<button class="mod" data-act="mod" data-id="' + m.id + '"><span class="t">' + m.title + (m.src === 'clase' ? ' <span class="badge ok" title="Incluye ejercicios de tu libro">Libro</span>' : '') + '</span><div class="meter ' + (warn ? 'warn' : '') + '"><i style="width:' + pct + '%"></i></div><span class="s">' + badge + (ms2 ? ' ' + pct + '%' : '') + '</span></button>';
       });
       o += '</div>';
     });
@@ -115,7 +115,7 @@
   }
   function vMod() {
     var m = modById(V.id), tab = V.tab || 'theory';
-    var o = '<div class="crumb"><button data-act="home">← Inicio</button><span>/</span><span>' + m.grp + '</span></div><h1 class="title">' + m.title + '</h1>';
+    var o = '<div class="crumb"><button data-act="home">← Inicio</button><span>/</span><span>' + m.grp + '</span></div><h1 class="title">' + m.title + '</h1>' + (m.src === 'clase' ? '<p class="note" style="margin-top:-6px">📘 Este tema incluye la teoría y los ejercicios de tu libro de clase.</p>' : '');
     o += '<div class="tabs"><button class="' + (tab === 'theory' ? 'on' : '') + '" data-act="tab" data-tab="theory">Teoría</button><button class="' + (tab === 'practice' ? 'on' : '') + '" data-act="tab" data-tab="practice">Practicar</button></div>';
     if (tab === 'theory') {
       o += '<div class="theory">' + m.theory + exampleTable(m) + '</div><div class="cta"><button class="btn" data-act="start" data-id="' + m.id + '">Practicar este tema →</button></div>';

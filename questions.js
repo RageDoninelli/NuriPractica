@@ -42,6 +42,22 @@
   function uniq(a) { var s = {}, o = []; a.forEach(function (x) { var k = IT.norm(x, true); if (!s[k]) { s[k] = 1; o.push(x); } }); return o; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
 
+  function variant(v, aux) { var c = {}; for (var k in v) c[k] = v[k]; c.aux = aux; return c; }
+  function mergeEnt(list) {
+    var out = { d: list[0].d, a: [], m: [], f: [] };
+    list.forEach(function (e) { ['a', 'm', 'f'].forEach(function (k) { (e[k] || []).forEach(function (x) { if (out[k].indexOf(x) < 0) out[k].push(x); }); }); });
+    return out;
+  }
+  function auxEntry(v, t, p, spec) {
+    return mergeEnt(spec.split('|').map(function (a) { return entFor(variant(v, a), t, p); }));
+  }
+  var AMB = ['finire', 'cominciare', 'vivere', 'passare', 'correre', 'salire', 'scendere', 'continuare', 'potere', 'volere', 'dovere', 'stare', 'essere', 'avere', 'divorziare'];
+  function whyAux(v) {
+    if (v.refl) return '<b>' + v.inf + '</b> es reflexivo: todos los reflexivos usan <b>essere</b>.';
+    if (v.aux === 'essere') return '<b>' + v.inf + '</b> es un verbo intransitivo de movimiento, estado, cambio o impersonal: usa <b>essere</b> y el participio concuerda con el sujeto.';
+    return '<b>' + v.inf + '</b> usa <b>avere</b> (verbo transitivo o intransitivo sin movimiento/cambio). El participio no concuerda con el sujeto.';
+  }
+
   function modOf(id) { for (var i = 0; i < MODS.length; i++) if (MODS[i].id === id) return MODS[i]; }
   function isNF(t) { return !!IT.NONFIN[t]; }
   function label(t) { var d = IT.TENSES[t] || IT.NONFIN[t]; return d.it; }
@@ -55,7 +71,7 @@
     return !!(f && f[p || 0]);
   }
   function verbPool(t) {
-    return VERBS.filter(function (v) { return hasForm(v, t, 0); });
+    return VERBS.filter(function (v) { return !v.noRand && hasForm(v, t, 0); });
   }
   function pickVerb(t) {
     var pool = verbPool(t), irr = pool.filter(function (v) { return v.irr; });
@@ -164,8 +180,12 @@
     }
     if (kind === 'sent' || kind === 'sentc') {
       var bank = isNF(t) ? g.SENTENCES_NF[t] : g.SENTENCES[t], row = bank[P.i];
-      var text = row[0], vv = IT.find(row[1]), p = isNF(t) ? 0 : row[2], gnd = row[3] || P.g || null;
-      var ent = entFor(vv, t, p);
+      var text = row[0], vv = IT.find(row[1]), p = isNF(t) ? 0 : row[2], gnd = row[3] || P.g || null, ent, custom = isNF(t) && typeof row[2] === 'string';
+      var spec = !isNF(t) ? row[4] : null, vvv = spec ? variant(vv, spec.split('|')[0]) : vv;
+      if (spec && spec.indexOf('|') >= 0) kind = 'sent';
+      if (custom) { var cl = row[2].split('|'); ent = { d: cl[0], a: cl, m: cl, f: cl }; kind = 'sent'; }
+      else if (spec) ent = auxEntry(vv, t, p, spec);
+      else ent = entFor(vv, t, p);
       var html = esc(text).replace('___', '<span class="gap">_____</span>');
       out.prompt = html;
       out.sub = label(t) + ' · completa con la forma correcta del verbo entre paréntesis';
@@ -173,10 +193,38 @@
       if (kind === 'sent') { out.type = 'typed'; }
       else {
         out.type = 'choice'; out.display = shown(ent, gnd);
-        out.choices = P.cs ? P.cs : choiceSet(vv, t, p, gnd || 'm', shown(ent, gnd || 'm'));
+        out.choices = P.cs ? P.cs : choiceSet(vvv, t, p, gnd || 'm', shown(ent, gnd || 'm'));
         out.sub = label(t) + ' · elige la forma correcta' + (P.g ? ' · sujeto ' + (P.g === 'f' ? 'femenino' : 'masculino') : '');
       }
       out.fullSentence = text.replace('___', shown(ent, gnd));
+      return result(out);
+    }
+    if (kind === 'fc') {
+      var fr = g.SENTENCES_FC[P.i];
+      out.type = 'choice'; out.t = fr.t;
+      out.prompt = esc(fr.text).replace('___', '<span class="gap">_____</span>');
+      out.sub = label(fr.t) + ' · elige la forma correcta';
+      var opts = fr.o.map(function (x, k) { return { t: x, ok: k === 0 }; });
+      out.choices = P.cs ? P.cs : shuffle(opts);
+      out.display = fr.o[0]; out.answer = { d: fr.o[0], a: [fr.o[0]] };
+      out.fullSentence = fr.text.replace('___', fr.o[0]); out.rule = RULES[fr.t];
+      return result(out);
+    }
+    if (kind === 'aux') {
+      var av = IT.find(P.verb);
+      out.type = 'choice'; out.t = 'ind_pp';
+      out.prompt = 'Passato prossimo de <span class="vb">' + av.inf + '</span> <small>(' + av.es + ')</small>: ¿con qué ausiliare?';
+      out.sub = 'Avere o essere';
+      out.choices = P.cs ? P.cs : shuffle([{ t: 'avere', ok: av.aux === 'avere' }, { t: 'essere', ok: av.aux === 'essere' }]);
+      out.display = av.aux; out.answer = { d: av.aux, a: [av.aux] }; out.rule = whyAux(av);
+      return result(out);
+    }
+    if (kind === 'infin') {
+      var iv = IT.find(P.verb), ie = entFor(iv, 'ind_pp', P.p);
+      out.type = 'typed'; out.t = 'ind_pp';
+      out.prompt = '¿Cuál es el <b>infinitivo</b> de <b>«' + esc(shown(ie, P.g)) + '»</b>?';
+      out.sub = 'Passato prossimo · escribe el verbo en infinitivo (' + iv.es + ')';
+      out.answer = { d: iv.inf, a: [iv.inf], m: [iv.inf], f: [iv.inf] }; out.gender = null; out.rule = RULES.ind_pp;
       return result(out);
     }
     if (kind === 'trans') {
@@ -221,19 +269,32 @@
     return n === 1;
   }
 
+  var EXTRA = { ind_pp: ['aux', 'infin', 'fc', 'fc'], ind_pres: [], part_pass: [] };
   function rand(modId, opts) {
     opts = opts || {};
     var m = modOf(modId), t = pick(m.tenses), nf = isNF(t);
     var kinds = opts.kinds || (nf ? ['conj', 'choice', 'sent', 'sentc', 'ident', 'table'] : ['conj', 'choice', 'sent', 'sentc', 'trans', 'ident', 'table']);
     if (nf) kinds = kinds.filter(function (k) { return k !== 'trans' && k !== 'table'; }).concat(['table'].slice(0, 0));
+    if (!opts.kinds && EXTRA[modId]) kinds = kinds.concat(EXTRA[modId]);
     if (!kinds.length) kinds = ['conj'];
     var kind = pick(kinds), tries = 0, params, q;
     while (tries++ < 30) {
       var v = IT.find(pickVerb(t)), p = nf ? 0 : rnd(np(t)), gnd = !nf && needsG(v, t, p) ? pick(['m', 'f']) : null;
-      if (kind === 'sent' || kind === 'sentc') {
+      if (kind === 'fc') {
+        var fcs = (g.SENTENCES_FC || []).map(function (r, i) { return r.m === modId ? i : -1; }).filter(function (i) { return i >= 0; });
+        if (!fcs.length) { kind = 'conj'; continue; }
+        params = { mod: modId, t: t, kind: 'fc', i: pick(fcs) };
+      } else if (kind === 'aux') {
+        var cand = VERBS.filter(function (x) { return !x.noRand && AMB.indexOf(x.inf) < 0; });
+        params = { mod: modId, t: t, kind: 'aux', verb: pick(cand).inf };
+      } else if (kind === 'infin') {
+        var iv2 = IT.find(pickVerb('ind_pp')), ip = rnd(6), ig = needsG(iv2, 'ind_pp', ip) ? pick(['m', 'f']) : null;
+        params = { mod: modId, t: t, kind: 'infin', verb: iv2.inf, p: ip, g: ig };
+      } else if (kind === 'sent' || kind === 'sentc') {
         var bank = nf ? g.SENTENCES_NF[t] : g.SENTENCES[t]; if (!bank || !bank.length) { kind = 'conj'; continue; }
         var ix = rnd(bank.length), rw = bank[ix], sv = IT.find(rw[1]), sg = null;
-        if (kind === 'sentc' && !rw[3] && !nf && needsG(sv, t, rw[2])) sg = pick(['m', 'f']);
+        if (kind === 'sentc' && ((nf && typeof rw[2] === 'string') || (rw[4] && rw[4].indexOf('|') >= 0))) kind = 'sent';
+        if (kind === 'sentc' && !rw[3] && !nf && needsG(rw[4] ? variant(sv, rw[4].split('|')[0]) : sv, t, rw[2])) sg = pick(['m', 'f']);
         params = { mod: modId, t: t, kind: kind, i: ix, g: sg };
       } else if (kind === 'trans') {
         var from = pick((NEIGH[t] || []).filter(function (x) { return x !== 'imp_pres'; }));

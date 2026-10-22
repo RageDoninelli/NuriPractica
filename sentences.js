@@ -244,6 +244,7 @@
     ]
   };
   // Pasado de un gerundio con «alzarsi»: 'essendosi alzato/a'
+  g.SENTENCES_FC = g.SENTENCES_FC || [];
   g.SENTENCES = S;
   g.SENTENCES_NF = NF;
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -161,11 +161,11 @@
     '<li>Se usa en el lenguaje burocrático / jurídico con valor verbal: <i>le persone aventi diritto, i fondi spettanti.</i></li></ul>' +
     '<p>No confundir con el <b>gerundio</b> (parlando) ni con el estar + gerundio.</p>' });
 
-  add({ id: 'part_pass', grp: 'Participio', title: 'Participio passato', tenses: ['part_pass'], kind: 'nf',
+  add({ id: 'part_pass', grp: 'Participio', title: 'Participio passato', tenses: ['part_pass'], kind: 'nf', src: 'clase',
     theory:
     '<h3>Formación regular</h3><p>-are → <b>-ato</b> · -ere → <b>-uto</b> · -ire → <b>-ito</b>: parlato, venduto, dormito, finito.</p>' +
     '<h3>Irregulares frecuentes</h3>' +
-    '<p>fare <b>fatto</b> · dire <b>detto</b> · scrivere <b>scritto</b> · leggere <b>letto</b> · prendere <b>preso</b> · mettere <b>messo</b> · chiudere <b>chiuso</b> · aprire <b>aperto</b> · vedere <b>visto</b> · venire <b>venuto</b> · essere/stare <b>stato</b> · rimanere <b>rimasto</b> · scegliere <b>scelto</b> · bere <b>bevuto</b> · vivere <b>vissuto</b> · nascere <b>nato</b> · morire <b>morto</b> · chiedere <b>chiesto</b> · rispondere <b>risposto</b> · decidere <b>deciso</b> · perdere <b>perso</b> · rompere <b>rotto</b> · offrire <b>offerto</b> · correre <b>corso</b> · spendere <b>speso</b> · accendere <b>acceso</b> · conoscere <b>conosciuto</b> · vincere <b>vinto</b> · dipingere <b>dipinto</b>.</p>' +
+    '<p>fare <b>fatto</b> · dire <b>detto</b> · scrivere <b>scritto</b> · leggere <b>letto</b> · prendere <b>preso</b> · mettere <b>messo</b> · chiudere <b>chiuso</b> · aprire <b>aperto</b> · vedere <b>visto</b> · venire <b>venuto</b> · essere/stare <b>stato</b> · rimanere <b>rimasto</b> · scegliere <b>scelto</b> · bere <b>bevuto</b> · vivere <b>vissuto</b> · nascere <b>nato</b> · morire <b>morto</b> · chiedere <b>chiesto</b> · rispondere <b>risposto</b> · decidere <b>deciso</b> · perdere <b>perso</b> · rompere <b>rotto</b> · offrire <b>offerto</b> · correre <b>corso</b> · spendere <b>speso</b> · accendere <b>acceso</b> · conoscere <b>conosciuto</b> · vincere <b>vinto</b> · dipingere <b>dipinto</b> · accorgersi <b>accorto</b> · dividere <b>diviso</b> · offendere <b>offeso</b> · spegnere <b>spento</b> · succedere <b>successo</b> · tradurre <b>tradotto</b>.</p>' +
     '<h3>Usos</h3><ul><li><b>Tiempos compuestos</b>: ho mangiato, sono andato.</li>' +
     '<li><b>Voz pasiva</b> (essere / venire + participio): <i>La casa è stata venduta.</i></li>' +
     '<li><b>Adjetivo</b>, concordando en género y número: <i>una porta chiusa, i libri letti.</i></li>' +

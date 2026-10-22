@@ -125,13 +125,51 @@
     { inf: 'aprire', es: 'abrir', pp: 'aperto', pr: 'aprii|apersi apristi aprì|aperse aprimmo apriste aprirono|apersero', ppres: 'aprente', irr: 1 },
     { inf: 'offrire', es: 'ofrecer', pp: 'offerto', pr: 'offrii|offersi offristi offrì|offerse offrimmo offriste offrirono|offersero', ppres: 'offerente', irr: 1 },
 
+    /* ---------- verbos del libro de clase (passato prossimo) ---------- */
+    { inf: 'inventare', es: 'inventar' }, { inf: 'sposare', es: 'casarse con' }, { inf: 'continuare', es: 'continuar' },
+    { inf: 'nominare', es: 'nombrar' }, { inf: 'controllare', es: 'controlar, revisar' },
+    { inf: 'ritornare', es: 'regresar', aux: 'essere' }, { inf: 'organizzare', es: 'organizar' },
+    { inf: 'divorziare', es: 'divorciarse' }, { inf: 'fondare', es: 'fundar' }, { inf: 'impiegare', es: 'emplear, tardar' },
+    { inf: 'passare', es: 'pasar' }, { inf: 'arrestare', es: 'arrestar' }, { inf: 'riportare', es: 'devolver, llevar de vuelta' },
+    { inf: 'scoppiare', es: 'estallar', aux: 'essere' }, { inf: 'costare', es: 'costar', aux: 'essere' },
+    { inf: 'sparire', es: 'desaparecer', aux: 'essere', isc: 1 },
+    { inf: 'portare', es: 'llevar, traer' }, { inf: 'infilare', es: 'meter, deslizar' },
+    { inf: 'diminuire', es: 'disminuir', aux: 'essere', isc: 1 },
+    { inf: 'sedersi', es: 'sentarse', pp: 'seduto', pres: 'siedo siedi siede sediamo sedete siedono', fut: 'sieder', irr: 1 },
+    { inf: 'incontrare', es: 'encontrar(se con)' }, { inf: 'lanciare', es: 'lanzar' }, { inf: 'tirare', es: 'tirar, lanzar' },
+    { inf: 'definire', es: 'definir', isc: 1 },
+    { inf: 'dividere', es: 'dividir', pp: 'diviso', pr: 'divis', ppres: 'dividente', irr: 1 },
+    { inf: 'offendere', es: 'ofender', pp: 'offeso', pr: 'offes', ppres: 'offendente', irr: 1 },
+    { inf: 'spegnere', es: 'apagar', pp: 'spento', pres: 'spengo spegni spegne spegniamo spegnete spengono', pr: 'spens', ppres: 'spegnente', irr: 1 },
+    { inf: 'tradurre', es: 'traducir', pp: 'tradotto', pres: 'traduco traduci traduce traduciamo traducete traducono', imp: 'traduc',
+      pr: 'tradussi traducesti tradusse traducemmo traduceste tradussero', fut: 'tradurr', ppres: 'traducente', irr: 1 },
+    { inf: 'introdurre', es: 'introducir', pp: 'introdotto', pres: 'introduco introduci introduce introduciamo introducete introducono', imp: 'introduc',
+      pr: 'introdussi introducesti introdusse introducemmo introduceste introdussero', fut: 'introdurr', ppres: 'introducente', irr: 1 },
+    { inf: 'produrre', es: 'producir', pp: 'prodotto', pres: 'produco produci produce produciamo producete producono', imp: 'produc',
+      pr: 'produssi producesti produsse producemmo produceste produssero', fut: 'produrr', ppres: 'producente', irr: 1 },
+    { inf: 'comporre', es: 'componer', pp: 'composto', pres: 'compongo componi compone componiamo componete compongono', imp: 'compon',
+      pr: 'composi componesti compose componemmo componeste composero', fut: 'comporr', ppres: 'componente', irr: 1 },
+    { inf: 'ottenere', es: 'obtener', pp: 'ottenuto', pres: 'ottengo ottieni ottiene otteniamo ottenete ottengono', pr: 'ottenn', fut: 'otterr', ppres: 'ottenente', irr: 1 },
+    { inf: 'riconoscere', es: 'reconocer', pp: 'riconosciuto', pr: 'riconobb', ppres: 'riconoscente', irr: 1 },
+    { inf: 'riuscire', es: 'lograr', aux: 'essere', pp: 'riuscito', pres: 'riesco riesci riesce riusciamo riuscite riescono', ppres: 'riuscente', irr: 1 },
+    /* impersonales: solo aparecen en frases del libro (no en ejercicios sueltos) */
+    { inf: 'succedere', es: 'suceder', aux: 'essere', pp: 'successo', pr: 'success', noRand: 1, irr: 1 },
+    { inf: 'sembrare', es: 'parecer', aux: 'essere', noRand: 1 }, { inf: 'bastare', es: 'bastar', aux: 'essere', noRand: 1 },
+    { inf: 'dispiacere', es: 'sentir, lamentar', aux: 'essere', pp: 'dispiaciuto', pres: 'dispiaccio dispiaci dispiace dispiacciamo dispiacete dispiacciono', pr: 'dispiacqu', noRand: 1, noImp: 1, ppres: null, irr: 1 },
+
     /* ---------- riflessivi ---------- */
     { inf: 'alzarsi', es: 'levantarse' }, { inf: 'lavarsi', es: 'lavarse' },
     { inf: 'svegliarsi', es: 'despertarse' }, { inf: 'chiamarsi', es: 'llamarse' },
     { inf: 'divertirsi', es: 'divertirse' }, { inf: 'vestirsi', es: 'vestirse' },
     { inf: 'sentirsi', es: 'sentirse' }, { inf: 'addormentarsi', es: 'dormirse' },
     { inf: 'arrabbiarsi', es: 'enojarse' }, { inf: 'annoiarsi', es: 'aburrirse' },
-    { inf: 'innamorarsi', es: 'enamorarse' }
+    { inf: 'innamorarsi', es: 'enamorarse' }, { inf: 'laurearsi', es: 'graduarse' }, { inf: 'sposarsi', es: 'casarse' },
+    { inf: 'interessarsi', es: 'interesarse' }, { inf: 'licenziarsi', es: 'renunciar (a un empleo)' }, { inf: 'separarsi', es: 'separarse' },
+    { inf: 'trasferirsi', es: 'mudarse', isc: 1 }, { inf: 'fermarsi', es: 'detenerse' }, { inf: 'ricordarsi', es: 'acordarse' },
+    { inf: 'occuparsi', es: 'ocuparse' }, { inf: 'salvarsi', es: 'salvarse' }, { inf: 'ferirsi', es: 'herirse', isc: 1 },
+    { inf: 'mettersi', es: 'ponerse', pp: 'messo', pr: 'mis', irr: 1 },
+    { inf: 'conoscersi', es: 'conocerse', pp: 'conosciuto', pr: 'conobb', irr: 1 },
+    { inf: 'accorgersi', es: 'darse cuenta', pp: 'accorto', pr: 'accors', irr: 1 }
   ];
   g.VERBS = V;
   if (g.IT) g.IT.load(V);

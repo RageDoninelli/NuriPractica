@@ -31,17 +31,53 @@
     '<p>Otros: <b>dire</b> dico, dici, dice, diciamo, dite, dicono · <b>potere</b> posso, puoi, può, possiamo, potete, possono · <b>volere</b> voglio, vuoi, vuole, vogliamo, volete, vogliono · <b>dovere</b> devo, devi, deve, dobbiamo, dovete, devono · <b>sapere</b> so, sai, sa, sappiamo, sapete, sanno · <b>uscire</b> esco, esci, esce, usciamo, uscite, escono · <b>bere</b> bevo, bevi… · <b>tenere</b> tengo, tieni… · <b>salire</b> salgo, sali… · <b>scegliere</b> scelgo, scegli… · <b>rimanere</b> rimango, rimani…</p>' +
     '<h3>Usos</h3><ul><li>Acciones actuales y habituales: <i>Ogni giorno mangio alle due.</i></li><li>Verdades generales: <i>L\'acqua bolle a cento gradi.</i></li><li>Futuro próximo: <i>Domani parto per Roma.</i></li><li><b>stare + gerundio</b>: acción en curso: <i>Sto studiando.</i></li></ul>' });
 
-  add({ id: 'ind_pp', grp: 'Indicativo', title: 'Passato prossimo', tenses: ['ind_pp'], kind: 'fin',
+  add({ id: 'ind_pp', grp: 'Indicativo', title: 'Passato prossimo', tenses: ['ind_pp'], kind: 'fin', src: 'clase',
     theory:
-    '<h3>Formación</h3><p><b>Presente de essere o avere + participio passato.</b></p>' +
-    '<p>Participio regular: -are → <b>-ato</b> · -ere → <b>-uto</b> · -ire → <b>-ito</b>.</p>' +
-    '<h3>¿Essere o avere?</h3><ul>' +
-    '<li><b>Essere</b>: verbos de movimiento y de cambio de estado (andare, venire, arrivare, partire, uscire, entrare, tornare, salire, scendere, nascere, morire, diventare, rimanere, restare, stare, essere, piacere, cadere), y <b>todos los reflexivos</b>. El participio <b>concuerda</b> con el sujeto: <i>Maria è andata; i ragazzi sono arrivati.</i></li>' +
-    '<li><b>Avere</b>: verbos transitivos (con objeto directo) y la mayoría de los intransitivos: <i>Ho mangiato una mela. Ho dormito bene.</i> El participio no concuerda con el sujeto.</li></ul>' +
-    '<h3>Participios irregulares frecuentes</h3>' +
-    '<p>fare <b>fatto</b> · dire <b>detto</b> · scrivere <b>scritto</b> · leggere <b>letto</b> · prendere <b>preso</b> · mettere <b>messo</b> · chiudere <b>chiuso</b> · aprire <b>aperto</b> · vedere <b>visto</b> · venire <b>venuto</b> · essere/stare <b>stato</b> · rimanere <b>rimasto</b> · scegliere <b>scelto</b> · bere <b>bevuto</b> · vivere <b>vissuto</b> · nascere <b>nato</b> · morire <b>morto</b> · chiedere <b>chiesto</b> · rispondere <b>risposto</b> · decidere <b>deciso</b> · perdere <b>perso</b> · rompere <b>rotto</b> · offrire <b>offerto</b> · correre <b>corso</b> · spendere <b>speso</b> · accendere <b>acceso</b>.</p>' +
-    '<h3>Con pronombres</h3><p>Con los pronombres lo, la, li, le el participio concuerda con ellos: <i>Ho comprato le mele → Le ho comprate.</i> Los reflexivos usan essere: <i>Mi sono svegliato/a.</i></p>' +
-    '<h3>Usos</h3><ul><li>Acción terminada, con relación al presente: <i>Ieri ho visto un film.</i></li><li>Marcadores: ieri, stamattina, la settimana scorsa, due anni fa, già, ancora non.</li></ul>' });
+    '<h3>Formación</h3><p><b>Presente de avere o essere + participio passato del verbo.</b></p>' +
+    '<table><tr><th></th><th>avere + participio</th><th>essere + participio</th></tr>' +
+    '<tr><td>io</td><td>ho parlato</td><td>sono andato/a</td></tr><tr><td>tu</td><td>hai parlato</td><td>sei andato/a</td></tr>' +
+    '<tr><td>lui/lei/Lei</td><td>ha parlato</td><td>è andato/a</td></tr><tr><td>noi</td><td>abbiamo parlato</td><td>siamo andati/e</td></tr>' +
+    '<tr><td>voi</td><td>avete parlato</td><td>siete andati/e</td></tr><tr><td>loro</td><td>hanno parlato</td><td>sono andati/e</td></tr></table>' +
+    '<h3>El participio passato</h3><ul><li>-are → <b>-ato</b> (mangiare → mangiato) · -ere → <b>-uto</b> (conoscere → conosciuto) · -ire → <b>-ito</b> (finire → finito).</li>' +
+    '<li>Con <b>avere</b> el participio <b>termina siempre en -o</b>: <i>Franco ha capito. Francesca ha capito. Ennio e Franco hanno capito.</i></li>' +
+    '<li>Con <b>essere</b> el participio funciona como un adjetivo, con 4 terminaciones (-o, -a, -i, -e) y <b>concuerda con el sujeto</b>: <i>Franco è andato · Francesca è andata · Ennio e Franco sono andati · Francesca e Lilli sono andate.</i></li></ul>' +
+    '<h3>¿Avere o essere?</h3>' +
+    '<ul><li><b>Todos los verbos transitivos</b> (los que llevan objeto directo: «¿qué?», «¿a quién?») usan <b>avere</b>: <i>Il bambino ha finito il gelato (cosa?). Mario ha sposato Marella (chi?). Ho studiato italiano. Abbiamo incontrato Anna.</i></li>' +
+    '<li><b>Todos los verbos reflexivos</b> usan <b>essere</b>: <i>Mi sono alzata alle 6.00. Ci siamo conosciuti un mese fa.</i></li>' +
+    '<li><b>Casi todos los verbos intransitivos</b> (sin objeto directo) usan <b>essere</b>: <i>Questa borsa è costata molto. L\'ascensore è salito al primo piano. Le vacanze sono cominciate ieri.</i> Entre ellos:' +
+    '<ul><li><b>a) De estado:</b> (re)stare, rimanere… <i>Renata è restata a casa. Oliviero è rimasto in albergo.</i></li>' +
+    '<li><b>b) De movimiento:</b> andare, venire, arrivare, partire, tornare, entrare, uscire, cadere… <i>Siamo andati al mare. Il treno è partito un\'ora fa.</i></li>' +
+    '<li><b>c) De cambio:</b> diventare, morire, nascere, invecchiare, iniziare, cominciare, finire… <i>Mio nonno è morto. Ieri è nata mia nipote. La festa è finita a mezzanotte.</i></li>' +
+    '<li><b>d) Impersonales:</b> piacere, dispiacere, bastare, parere, succedere, sembrare… <i>L\'Islanda mi è piaciuta moltissimo. Luca mi è sembrato triste. Che è successo?</i></li></ul></li>' +
+    '<li>Ojo con <b>finire / cominciare</b>: con objeto usan avere (<i>Ho finito il lavoro</i>), sin objeto usan essere (<i>La festa è finita</i>).</li>' +
+    '<li><b>Muchos verbos tienen participio irregular.</b></li></ul>' +
+    '<h3>Verbos modales: volere, potere, dovere, sapere</h3><ul>' +
+    '<li><b>Solos</b> usan normalmente <b>avere</b>: <i>«Hai telefonato al dottore?» — «No, non ho potuto / No, non ho voluto.»</i></li>' +
+    '<li><b>Seguidos de otro verbo</b> toman, por lo general, <b>el ausiliare del verbo que sigue</b>: <i>Non sono potuto andare a teatro</i> (porque andare usa essere). <i>Non siamo voluti tornare a casa da soli</i> (tornare usa essere). <i>Non ho potuto mangiare</i> (mangiare usa avere).</li>' +
+    '<li>En el italiano de hoy también se acepta avere con los modales (<i>Non ho potuto andare</i>), pero en el examen sigue la regla del libro: el ausiliare del verbo que sigue.</li></ul>' +
+    '<h3>Participios irregulares (tabla del libro)</h3>' +
+    '<table><tr><th>verbo</th><th>participio</th><th>verbo</th><th>participio</th></tr>' +
+    '<tr><td>accendere</td><td><b>acceso</b></td><td>offrire</td><td><b>offerto</b></td></tr>' +
+    '<tr><td>accorgersi</td><td><b>accorto</b></td><td>perdere</td><td><b>perso</b></td></tr>' +
+    '<tr><td>aprire</td><td><b>aperto</b></td><td>prendere</td><td><b>preso</b></td></tr>' +
+    '<tr><td>bere</td><td><b>bevuto</b></td><td>rimanere</td><td><b>rimasto</b></td></tr>' +
+    '<tr><td>chiedere</td><td><b>chiesto</b></td><td>rispondere</td><td><b>risposto</b></td></tr>' +
+    '<tr><td>chiudere</td><td><b>chiuso</b></td><td>rompere</td><td><b>rotto</b></td></tr>' +
+    '<tr><td>correre</td><td><b>corso</b></td><td>scegliere</td><td><b>scelto</b></td></tr>' +
+    '<tr><td>decidere</td><td><b>deciso</b></td><td>scendere</td><td><b>sceso</b></td></tr>' +
+    '<tr><td>dire</td><td><b>detto</b></td><td>scrivere</td><td><b>scritto</b></td></tr>' +
+    '<tr><td>dividere</td><td><b>diviso</b></td><td>spegnere</td><td><b>spento</b></td></tr>' +
+    '<tr><td>essere</td><td><b>stato</b></td><td>stare</td><td><b>stato</b></td></tr>' +
+    '<tr><td>fare</td><td><b>fatto</b></td><td>succedere</td><td><b>successo</b></td></tr>' +
+    '<tr><td>leggere</td><td><b>letto</b></td><td>tradurre</td><td><b>tradotto</b></td></tr>' +
+    '<tr><td>mettere</td><td><b>messo</b></td><td>vedere</td><td><b>visto</b></td></tr>' +
+    '<tr><td>morire</td><td><b>morto</b></td><td>venire</td><td><b>venuto</b></td></tr>' +
+    '<tr><td>nascere</td><td><b>nato</b></td><td>vincere</td><td><b>vinto</b></td></tr>' +
+    '<tr><td>offendere</td><td><b>offeso</b></td><td>vivere</td><td><b>vissuto</b></td></tr></table>' +
+    '<p>Otros frecuentes: introdurre <b>introdotto</b> · produrre <b>prodotto</b> · comporre <b>composto</b> · ottenere <b>ottenuto</b> · riconoscere <b>riconosciuto</b> · spendere <b>speso</b> · conoscere <b>conosciuto</b> · cadere <b>caduto</b>.</p>' +
+    '<h3>Con pronombres</h3><p>Con los pronombres de objeto directo lo, la, li, le el participio concuerda con ellos: <i>Ho comprato le mele → Le ho comprate.</i> Los reflexivos usan essere: <i>Mi sono svegliato/a.</i></p>' +
+    '<h3>Usos y marcadores</h3><ul><li>Acción terminada, relacionada con el presente: <i>Ieri ho visto un film.</i></li><li>Marcadores: ieri, stamattina, la settimana scorsa, due anni fa, già, non… ancora, mai, un mese fa.</li>' +
+    '<li><b>Passato prossimo vs imperfetto:</b> el prossimo cuenta el hecho puntual y terminado; el imperfetto describe el fondo, la costumbre o lo que estaba pasando.</li></ul>' });
 
   add({ id: 'ind_imperf', grp: 'Indicativo', title: 'Imperfetto', tenses: ['ind_imperf'], kind: 'fin',
     theory:
