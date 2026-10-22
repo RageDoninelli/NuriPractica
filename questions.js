@@ -203,11 +203,11 @@
       var fr = g.SENTENCES_FC[P.i];
       out.type = 'choice'; out.t = fr.t;
       out.prompt = esc(fr.text).replace('___', '<span class="gap">_____</span>');
-      out.sub = label(fr.t) + ' · elige la forma correcta';
+      out.sub = (fr.h ? '' : label(fr.t) + ' · ') + 'elige la forma correcta';
       var opts = fr.o.map(function (x, k) { return { t: x, ok: k === 0 }; });
       out.choices = P.cs ? P.cs : shuffle(opts);
       out.display = fr.o[0]; out.answer = { d: fr.o[0], a: [fr.o[0]] };
-      out.fullSentence = fr.text.replace('___', fr.o[0]); out.rule = RULES[fr.t];
+      out.fullSentence = fr.text.replace('___', fr.o[0]); out.rule = fr.w || RULES[fr.t];
       return result(out);
     }
     if (kind === 'aux') {
@@ -269,7 +269,7 @@
     return n === 1;
   }
 
-  var EXTRA = { ind_pp: ['aux', 'infin', 'fc', 'fc'], ind_pres: ['fc', 'fc'], part_pass: [] };
+  var EXTRA = { ind_pp: ['aux', 'infin', 'fc', 'fc'], ind_pres: ['fc', 'fc'], ind_imperf: ['fc', 'fc'], part_pass: [] };
   function rand(modId, opts) {
     opts = opts || {};
     var m = modOf(modId), t = pick(m.tenses), nf = isNF(t);

@@ -182,7 +182,28 @@
     { inf: 'nascondere', es: 'esconder', pp: 'nascosto', pr: 'nascos', ppres: 'nascondente', irr: 1 },
     { inf: 'assistere', es: 'asistir', pp: 'assistito', ppres: 'assistente' },
     { inf: 'risalire', es: 'remontarse', aux: 'essere', pp: 'risalito', pres: 'risalgo risali risale risaliamo risalite risalgono', ppres: 'risalente', irr: 1 },
-    { inf: 'fuggire', es: 'huir', aux: 'essere', pp: 'fuggito', ppres: 'fuggente' }
+    { inf: 'fuggire', es: 'huir', aux: 'essere', pp: 'fuggito', ppres: 'fuggente' },
+    /* — imperfetto y passato prossimo vs imperfetto (libro) — */
+    { inf: 'comunicare', es: 'comunicar' }, { inf: 'baciare', es: 'besar' }, { inf: 'festeggiare', es: 'festejar' },
+    { inf: 'raccontare', es: 'contar, relatar' }, { inf: 'dedicare', es: 'dedicar' }, { inf: 'consigliare', es: 'aconsejar' },
+    { inf: 'rappresentare', es: 'representar' }, { inf: 'invitare', es: 'invitar' },
+    { inf: 'saltare', es: 'saltar', aux: 'essere' }, { inf: 'scappare', es: 'escaparse', aux: 'essere' },
+    { inf: 'resistere', es: 'resistir', pp: 'resistito', ppres: 'resistente' },
+    { inf: 'partorire', es: 'dar a luz', isc: 1 },
+    { inf: 'proteggere', es: 'proteger', pp: 'protetto', pr: 'protess', ppres: 'proteggente', irr: 1 },
+    { inf: 'uccidere', es: 'matar', pp: 'ucciso', pr: 'uccis', ppres: 'uccidente', irr: 1 },
+    { inf: 'smettere', es: 'dejar de', pp: 'smesso', pr: 'smis', ppres: 'smettente', irr: 1 },
+    { inf: 'piangere', es: 'llorar', pp: 'pianto', pr: 'pians', ppres: 'piangente', irr: 1 },
+    { inf: 'ridere', es: 'reír', pp: 'riso', pr: 'ris', ppres: 'ridente', irr: 1 },
+    { inf: 'promettere', es: 'prometer', pp: 'promesso', pr: 'promis', ppres: 'promettente', irr: 1 },
+    { inf: 'risolvere', es: 'resolver', pp: 'risolto', pr: 'risolsi risolvesti risolse risolvemmo risolveste risolsero', ppres: 'risolvente', irr: 1 },
+    { inf: 'interrompere', es: 'interrumpir', pp: 'interrotto', pr: 'interrupp', ppres: 'interrompente', irr: 1 },
+    { inf: 'compiere', es: 'cumplir (años)', pp: 'compiuto', pres: 'compio compi compie compiamo compite compiono', impA: 'compivo compivi compiva compivamo compivate compivano', pr: 'compii compisti compì compimmo compiste compirono', fut: 'compir', ppres: 'compiente', irr: 1 },
+    { inf: 'piovere', es: 'llover', aux: 'essere', pp: 'piovuto', pr: 'piov', noRand: 1, noImp: 1, ppres: null, irr: 1 },
+    { inf: 'ritrovarsi', es: 'encontrarse (reunirse)' }, { inf: 'trovarsi', es: 'encontrarse (estar)' },
+    { inf: 'scusarsi', es: 'disculparse' }, { inf: 'circondarsi', es: 'rodearse' }, { inf: 'congratularsi', es: 'felicitar' },
+    { inf: 'farsi', es: 'hacerse', pp: 'fatto', pres: 'faccio fai fa facciamo fate fanno', imp: 'fac',
+      pr: 'feci facesti fece facemmo faceste fecero', fut: 'far', cp: 'faccia faccia faccia facciamo facciate facciano', irr: 1 }
   ];
   g.VERBS = V;
   if (g.IT) g.IT.load(V);

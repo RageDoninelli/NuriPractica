@@ -1,4 +1,4 @@
-/* Nuri practica — ejercicios del LIBRO DE CLASE: passato prossimo y presente regular.
+/* Nuri practica — ejercicios del LIBRO DE CLASE: passato prossimo, presente regular e imperfetto.
    Formato de fila: [texto con ___, verbo, persona 0-5, género 'm'/'f'/null, ausiliare]
    · ausiliare: 'essere' | 'avere' | 'essere|avere' (acepta ambas, la primera es la principal).
    · En part_pass: [texto, verbo, respuestas|alternativas] (concordancia).
@@ -275,4 +275,210 @@
   fcm('', 'Le guardie del mio stato ___ tedesco.', 'parlano', 'parlate'); fcm('', 'Io ___ a Milano e lavoro a Milano.', 'vivo', 'vive');
   fcm('', 'Uomini e donne ___ i vestiti che io disegno.', 'indossano', 'indossiamo'); fcm('', 'Molte modelle ___ per me.', 'lavorano', 'lavora');
   fcm('', 'I miei vestiti ___ molti soldi.', 'costano', 'costa'); fcm('', 'Mi ___ Giorgio.', 'chiamo', 'chiamano');
+
+  /* =================== IMPERFETTO (libro) =================== */
+  S.ind_imperf = S.ind_imperf.concat([
+    /* — Ej. 2 (a) · el hermano — */
+    ["Quando ___ (essere) piccola, tutti mi dicevano che sembravo mio fratello.", "essere", 0],
+    ["Quando ero piccola, tutti mi ___ (dire) che sembravo mio fratello.", "dire", 5],
+    ["Quando ero piccola, tutti mi dicevano che ___ (sembrare) mio fratello.", "sembrare", 0],
+    ["Io non ___ (essere) contenta, prima di tutto perché lui era un maschio.", "essere", 0],
+    ["Io non ero contenta, prima di tutto perché lui ___ (essere) un maschio.", "essere", 2],
+    ["Mio fratello non mi ___ (piacere).", "piacere", 2],
+    ["Mio fratello ___ (essere) antipatico.", "essere", 2],
+    ["Mio fratello non ___ (volere) mai giocare con me.", "volere", 2],
+    ["Mio fratello mi ___ (fare) sempre gli scherzi.", "fare", 2],
+    ["Mio fratello mi faceva sempre gli scherzi e ___ (ridere) di me con i suoi amici.", "ridere", 2],
+    ["E tu, ___ (andare) d'accordo con tuo fratello o con tua sorella?", "andare", 1],
+    /* — Ej. 2 (b) · la abuela — */
+    ["Mia nonna mi racconta che quando lei ___ (essere) giovane viveva in campagna.", "essere", 2],
+    ["Mia nonna mi racconta che quando lei era giovane ___ (vivere) in campagna.", "vivere", 2],
+    ["Mia nonna dice che la vita non ___ (essere) molto facile.", "essere", 2],
+    ["I contadini ___ (mangiare) carne solo una volta la settimana.", "mangiare", 5],
+    ["I contadini mangiavano carne solo una volta la settimana, quando ___ (essere) fortunati.", "essere", 5],
+    ["Di solito ___ (essere) carne di coniglio allevato da loro.", "essere", 2],
+    ["I giovani ___ (dovere) aiutare in casa.", "dovere", 5],
+    ["Solo le famiglie meno povere ___ (potere) permettersi di far studiare qualche figlio.", "potere", 5],
+    ["Come ___ (vivere) i contadini nel tuo paese 70 anni fa?", "vivere", 5],
+    /* — Ej. 3 · leyendas italianas — */
+    ["Ad Alassio, molto tempo fa, ___ (vivere) alcune streghe chiamate «bazure».", "vivere", 5],
+    ["Nelle notti di tempesta, le streghe ___ (ritrovarsi) sulla spiaggia.", "ritrovarsi", 5],
+    ["Le streghe ___ (mettere) in mare le barche che i pescatori avevano lasciato.", "mettere", 5],
+    ["Le streghe mettevano in mare le barche che i pescatori ___ (avere) lasciato.", "avere", 5],
+    ["Le streghe ___ (andare) con le barche verso l'Africa.", "andare", 5],
+    ["Prima dell'alba, però, le streghe ___ (tornare) con enormi quantità di datteri.", "tornare", 5],
+    ["Un tempo le ragazze che non ___ (trovare) marito chiedevano l'aiuto della Madonna.", "trovare", 5],
+    ["Un tempo le ragazze che non trovavano marito ___ (chiedere) l'aiuto della Madonna.", "chiedere", 5],
+    ["Una volta nelle grotte del monte Riventino ___ (vivere) delle fate.", "vivere", 5],
+    ["Queste fate ___ (volere) costruire una chiesa sul monte.", "volere", 5],
+    ["Le fate volevano costruire una chiesa sul monte perché ___ (essere) molto religiose.", "essere", 5],
+    ["Solo un uomo ___ (potere) comunicare con le fate.", "potere", 2],
+    ["Il ragazzo che ogni giorno ___ (portare) il pranzo agli uomini era l'unico che parlava con le fate.", "portare", 2],
+    ["Il ragazzo portava il pranzo agli uomini che ___ (lavorare) alla costruzione della chiesa.", "lavorare", 5],
+    ["Ogni giorno il ragazzo ___ (parlare) con le fate.", "parlare", 2],
+    ["Ogni giorno il ragazzo parlava con le fate e poi ___ (andare) a dare ai muratori le istruzioni.", "andare", 2],
+    ["Gli uomini, che ___ (essere) curiosi e volevano vedere le fate, uccisero il ragazzo.", "essere", 5],
+    ["Gli uomini, che erano curiosi e ___ (volere) vedere le fate, uccisero il ragazzo.", "volere", 5],
+    ["Il ragazzo, che ___ (cercare) di proteggerle, fu ucciso.", "cercare", 2],
+    /* — Usos del imperfetto (a–g) — */
+    ["Da bambina io ___ (avere) i capelli biondi.", "avere", 0], ["Ieri ___ (fare) così freddo!", "fare", 2],
+    ["D'estate noi ___ (andare) al mare tutti i giorni.", "andare", 3], ["Ricordo che di solito tu ___ (dire) molte bugie.", "dire", 1],
+    ["Non sono venuto perché ___ (essere) depresso.", "essere", 0], ["Ieri Anna non ___ (sentirsi) bene.", "sentirsi", 2],
+    ["C'___ (essere) una volta un re che aveva una figlia bellissima.", "essere", 2], ["C'era una volta un re che ___ (avere) una figlia bellissima.", "avere", 2],
+    ["Loro ___ (stare) per uscire quando siamo entrati.", "stare", 5], ["Mentre noi ___ (guardare) la TV, è saltata la luce.", "guardare", 3],
+    ["Io ___ (aspettare) l'autobus già da mezz'ora quando è passato mio padre in macchina.", "aspettare", 0],
+    ["Anna era in casa e ___ (leggere) il giornale.", "leggere", 2], ["Buongiorno, ___ (volere) tre etti di prosciutto.", "volere", 0],
+    /* — Ej. «Una nascita nella famiglia Rossi» (partes en imperfetto) — */
+    ["Era un giorno caldo e c'___ (essere) una luce così chiara e uniforme sulla città.", "essere", 2],
+    ["C'era una luce così chiara che ___ (sembrare) un giorno di primavera.", "sembrare", 2],
+    ["Il bambino ___ (essere) grande e aveva dei capelli lunghi e neri.", "essere", 2], ["Il bambino era grande e ___ (avere) dei capelli lunghi e neri.", "avere", 2],
+    ["Per fortuna il bambino ___ (essere) tranquillo e non piangeva.", "essere", 2], ["Per fortuna il bambino era tranquillo e non ___ (piangere).", "piangere", 2],
+    ["Mentre Silvia ___ (trovarsi) all'ospedale, a partorire, il padre era al lavoro.", "trovarsi", 2],
+    ["Il padre, Piero, ___ (essere) al lavoro e aspettava nervoso una telefonata dall'infermiera.", "essere", 2],
+    ["Piero era al lavoro e ___ (aspettare) nervoso una telefonata dall'infermiera.", "aspettare", 2],
+    ["Piero non si è accorto che la donna che ___ (stare) nel letto non era sua moglie.", "stare", 2],
+    ["Piero non si è accorto che la donna che stava nel letto non ___ (essere) sua moglie.", "essere", 2],
+    ["La pancia ___ (essere) ancora grossa e la donna era bionda, non castana come Silvia.", "essere", 2],
+    ["La donna ___ (essere) bionda, non castana come Silvia.", "essere", 2],
+    ["La moglie ___ (trovarsi) in quella stanza accanto.", "trovarsi", 2], ["Giacomo ___ (essere) lì con lei, addormentato nella culla.", "essere", 2],
+    ["Silvia ___ (ridere) perché era la prima volta che vedeva suo marito così confuso.", "ridere", 2],
+    ["Silvia rideva perché era la prima volta che ___ (vedere) suo marito così confuso.", "vedere", 2],
+    /* — Ej. 4 · el empresario — */
+    ["Quando ___ (essere) più giovane, io lavoravo come animatore sulle navi da crociera.", "essere", 0],
+    ["Quando ero più giovane ___ (lavorare) come animatore sulle navi da crociera.", "lavorare", 0],
+    ["Io ___ (avere) molti amici politici.", "avere", 0], ["Il paese ___ (avere) bisogno di un volto nuovo e onesto.", "avere", 2],
+    /* — Ej. Basilicata (ultracentenaria) — */
+    ["Una signora che ___ (compiere) 103 anni è stata festeggiata dal comune.", "compiere", 2],
+    ["Alla festa ___ (essere) presenti i parenti e molti amici.", "essere", 5], ["La signora ___ (essere) molto emozionata.", "essere", 2],
+    ["La signora non ___ (avere) problemi a rispondere alle interviste.", "avere", 2],
+    ["La signora rispondeva a tutti gli ospiti che ___ (volere) parlare con lei.", "volere", 5],
+    ["Da giovane la nonna ___ (occuparsi) della famiglia.", "occuparsi", 2], ["Il sindaco ha dato appuntamento alla nonnina mentre ___ (uscire).", "uscire", 2],
+    /* — Ej. Vittoria Colonna — */
+    ["Vittoria ___ (essere) figlia di nobili.", "essere", 2], ["Quando ___ (avere) cinque anni, Vittoria è stata promessa in sposa a Francesco D'Avalos.", "avere", 2],
+    ["Prima delle nozze Vittoria e Francesco non ___ (conoscersi) quasi per niente.", "conoscersi", 5],
+    ["Vittoria e Francesco ___ (essere) molto felici insieme.", "essere", 5], ["Vittoria, per la tristezza, ___ (volere) suicidarsi.", "volere", 2],
+    /* — Ej. Una domenica — */
+    ["Domenica il tempo non ___ (essere) per niente buono.", "essere", 2], ["Il tempo non era buono: c'___ (essere) un gran vento.", "essere", 2],
+    ["Il tempo non era buono: c'era un gran vento e ___ (fare) molto freddo.", "fare", 2], ["Carla non ___ (sentirsi) molto bene.", "sentirsi", 2],
+    ["Federica non ___ (essere) in casa.", "essere", 2], ["Il figlio ha risposto che non ___ (sapere) dove era la madre.", "sapere", 2],
+    ["Il figlio ha risposto che non sapeva dove ___ (essere) la madre.", "essere", 2], ["Carla ha pensato che forse non ___ (essere) una cattiva idea.", "essere", 2],
+    /* — Passato prossimo o imperfetto de algunos verbos (imperfetto) — */
+    ["Da bambina io non ___ (potere) uscire da sola la sera.", "potere", 0], ["Davvero Franca si è fatta suora? Non lo ___ (sapere)!", "sapere", 0],
+    ["Io ___ (volere) telefonarti, ma non ho avuto tempo.", "volere", 0], ["A quei tempi Sonia non ___ (conoscere) ancora suo marito.", "conoscere", 2],
+    ["Non ___ (dovere) lasciare la porta aperta! Ora il gatto è scappato.", "dovere", 1],
+    ["I Rossi ___ (dovere) fare dei lavori in casa, ma hanno deciso di usare i soldi per andare in vacanza.", "dovere", 5],
+    ["Lo ___ (sapere) che ho una casa a Roma?", "sapere", 1], ["I miei genitori ___ (conoscere) Pino da molti anni.", "conoscere", 5],
+    ["Volevamo comprare un'auto, ma ___ (costare) troppo.", "costare", 2], ["Da bambina io ___ (avere) i capelli rossi.", "avere", 0],
+    ["Noi ___ (volere) comprare un'auto, ma costava troppo.", "volere", 3], ["Mentre io ___ (telefonare), si è scaricata la batteria del cellulare.", "telefonare", 0],
+    ["Mentre lei ___ (parlare), l'hanno interrotta.", "parlare", 2],
+    /* — Ej. ciudad italiana (Torino) — */
+    ["Nell'antichità ___ (essere) una città romana.", "essere", 2], ["Nell'antichità era una città romana e i romani la ___ (chiamare) Augusta Taurinorum.", "chiamare", 5],
+    ["Negli anni '60 la fabbrica ___ (essere) un simbolo del boom economico italiano.", "essere", 2]
+  ]);
+
+  /* ---- passato prossimo en los textos mixtos (passato prossimo o imperfetto?) ---- */
+  S.ind_pp = S.ind_pp.concat([
+    ["Giacomo ___ (nascere) il 4 marzo, di giovedì.", "nascere", 2, "m"],
+    ["Subito dopo la nascita la madre, Silvia, ___ (volere) vedere il bambino.", "volere", 2, null, "avere"],
+    ["Subito dopo la nascita Silvia lo ___ (tenere) un po' lì con sé.", "tenere", 2],
+    ["Appena è arrivata la buona notizia, Piero ___ (alzarsi).", "alzarsi", 2, "m"],
+    ["Piero ___ (smettere) di lavorare ed è uscito di corsa.", "smettere", 2],
+    ["Piero ha smesso di lavorare ed ___ (uscire) di corsa per andare a vedere la moglie.", "uscire", 2, "m"],
+    ["Per strada Piero ___ (fermarsi) a comprare un mazzo di fiori.", "fermarsi", 2, "m"],
+    ["Appena ___ (arrivare) la buona notizia, Piero si è alzato.", "arrivare", 2, "f"],
+    ["Quando finalmente ___ (arrivare) all'ospedale, Piero ha salito le scale di corsa.", "arrivare", 2, "m"],
+    ["Piero ___ (salire) le scale di corsa.", "salire", 2, null, "avere"],
+    ["Per la confusione Piero ___ (entrare) nella stanza sbagliata.", "entrare", 2, "m"],
+    ["Dapprima Piero non ___ (accorgersi) che la donna nel letto non era sua moglie.", "accorgersi", 2, "m"],
+    ["Piero ___ (andare) vicino alla donna per baciarla.", "andare", 2, "m"],
+    ["Quando ___ (vedere) che la pancia era ancora grossa, Piero si è scusato.", "vedere", 2],
+    ["Piero ___ (scusarsi), imbarazzato, ed è uscito dalla stanza.", "scusarsi", 2, "m"],
+    ["Piero ___ (piangere) di commozione.", "piangere", 2],
+    ["Come ___ (fare) a diventare un imprenditore così importante, Lei?", "fare", 2],
+    ["Io ___ (avere) la fortuna di conoscere le persone giuste al momento giusto.", "avere", 0],
+    ["Poi io ___ (incontrare) delle persone che mi hanno aiutato nei miei progetti.", "incontrare", 0],
+    ["Poi ho incontrato delle persone che mi ___ (aiutare) nei miei progetti.", "aiutare", 5],
+    ["Come gli americani anche io ___ (farsi) da solo.", "farsi", 0, "m"],
+    ["Lei ___ (costruire) un impero.", "costruire", 2], ["Perché Lei ___ (entrare) in politica?", "entrare", 2, "m"],
+    ["I miei amici politici mi ___ (consigliare) di presentarmi alle elezioni.", "consigliare", 5],
+    ["Da quando sono in politica io ___ (risolvere) i problemi di tutta la famiglia.", "risolvere", 0],
+    ["Io ___ (trovare) lavoro a tutti.", "trovare", 0], ["Io ___ (comprare) tante belle cose anche alla mia mammina!", "comprare", 0],
+    ["Il 15 febbraio scorso il comune di Cancellara ___ (festeggiare) una anziana signora che compiva 103 anni.", "festeggiare", 2],
+    ["Le autorità della cittadina ___ (organizzare) una bella festa per la nonna.", "organizzare", 5],
+    ["Alla festa ___ (venire) anche il sindaco della città e il parroco.", "venire", 2, "m"],
+    ["La nonna ___ (raccontare) della sua vita passata.", "raccontare", 2], ["Il sindaco ___ (parlare) dell'importanza di una vita sana.", "parlare", 2],
+    ["Il sindaco ___ (fare) gli auguri alla nonnina.", "fare", 2], ["Il sindaco ___ (congratularsi) per le sue condizioni di salute.", "congratularsi", 2, "m"],
+    ["Il sindaco le ___ (dare) appuntamento per l'anno seguente!", "dare", 2],
+    ["Vittoria ___ (nascere) nel 1490.", "nascere", 2, "f"], ["Quando Vittoria aveva cinque anni, la sua famiglia ___ (promettere) Vittoria in sposa a Francesco D'Avalos.", "promettere", 2],
+    ["Prima di sposarsi, Vittoria ___ (passare) molti anni nell'isola di Ischia.", "passare", 2],
+    ["Vittoria e Francesco D'Avalos ___ (sposarsi).", "sposarsi", 5, "m"], ["Vittoria e Francesco ___ (innamorarsi).", "innamorarsi", 5, "m"],
+    ["Francesco ___ (morire) giovane, nel 1525.", "morire", 2, "m"], ["Vittoria ___ (decidere) di entrare in convento.", "decidere", 2],
+    ["In convento Vittoria ___ (rimanere) per molti anni.", "rimanere", 2, "f"], ["Vittoria ___ (cominciare) a comporre poesie dolcissime sul suo amore.", "cominciare", 2, null, "avere"],
+    ["Domenica Carla ___ (decidere) di telefonare a qualche amica.", "decidere", 2], ["Carla ___ (dovere) lasciare un messaggio sulla segreteria telefonica.", "dovere", 2, null, "avere"],
+    ["Monica ___ (rispondere) che non poteva venire.", "rispondere", 2], ["A casa di Piera ___ (rispondere) il figlio.", "rispondere", 2],
+    ["Carla ___ (farsi) una cioccolata calda.", "farsi", 2, "f"], ["Carla ___ (mettere) un dvd di un film romantico.", "mettere", 2],
+    ["Carla ___ (passare) una delle più belle domeniche degli ultimi anni.", "passare", 2],
+    ["Proprio ora io ___ (sapere) che Anna ha telefonato.", "sapere", 0], ["Nessuno ___ (volere) invitare Franco per Capodanno, e così è rimasto da solo a casa.", "volere", 2],
+    ["Sergio è triste perché ___ (sapere) che non ha passato l'esame.", "sapere", 2],
+    ["Mi dispiace, ma ho avuto così tanto da fare che non ___ (potere) finire quel lavoro!", "potere", 0],
+    ["I miei genitori ___ (conoscere) Pino a una festa di Carnevale.", "conoscere", 5], ["Per punizione oggi io ___ (dovere) restare in casa!", "dovere", 0, null, "essere|avere"],
+    ["Ieri ___ (sapere) da Susi che Franca si è fatta suora.", "sapere", 0], ["Ieri io ___ (conoscere) tuo fratello.", "conoscere", 0],
+    ["Ieri io non ___ (volere) lavorare, e non ho lavorato.", "volere", 0], ["Ieri io ___ (dovere) studiare tre capitoli di storia.", "dovere", 0, null, "avere"],
+    ["La famiglia Agnelli ___ (aprire) una grande fabbrica di auto.", "aprire", 2], ["La fabbrica ___ (diventare) molto famosa in Italia e all'estero.", "diventare", 2, "f"],
+    ["Per molti anni Torino ___ (essere) la sede dei Duchi di Savoia.", "essere", 2, "f"],
+    ["Ieri io ___ (studiare) dalle 10 alle 14.", "studiare", 0], ["Ieri io ___ (studiare) tutto il giorno.", "studiare", 0],
+    ["Ieri noi ___ (lavorare) dalle 9 alle 5.", "lavorare", 3], ["Ieri io ___ (lavorare) 10 ore!", "lavorare", 0],
+    ["Per 5 anni io ___ (studiare) inglese.", "studiare", 0], ["Solo ora io ___ (sapere) da mio padre che mamma si è sentita male.", "sapere", 0],
+    ["Mentre dormivo ___ (entrare) i ladri.", "entrare", 5, "m"], ["Paola ___ (conoscere) suo marito su Internet.", "conoscere", 2],
+    ["Oggi volevo fare la dieta, ma non ___ (resistere).", "resistere", 0],
+    ["Mentre guardavamo la TV ___ (saltare) la luce.", "saltare", 2, "f"], ["Aspettavo l'autobus quando ___ (passare) mio padre in macchina.", "passare", 2, "m", "essere"],
+    ["Stavano per uscire quando noi ___ (entrare).", "entrare", 3], ["Non ___ (venire) perché ero depresso.", "venire", 0, "m"]
+  ]);
+
+  /* ---- Imperfetto: elegir la forma (libro) ---- */
+  function fci(text, a, b) { FC.push({ m: "ind_imperf", t: "ind_imperf", text: text, o: [a, b] }); }
+  fci("Una volta la Corsica ___ italiana.", "era", "erano"); fci("Nel Medioevo gli intellettuali italiani ___ latino.", "parlavano", "parlavamo");
+  fci("Prima della Repubblica gli italiani ___ un re.", "avevano", "abbiamo"); fci("Una volta nel Sud Italia ___ i greci.", "c'erano", "c'eri");
+  fci("I fondatori di Roma si ___ Romolo e Remo.", "chiamavano", "chiamava"); fci("Prima dell'eruzione del Vesuvio, Pompei ___ un importante centro commerciale e culturale.", "rappresentava", "rappresentavi");
+  fci("L'antica Roma si ___ su dieci colli.", "trovava", "trovavamo"); fci("Le quattro repubbliche marinare ___ Pisa, Venezia, Genova e Amalfi.", "erano", "eri");
+  fci("La famiglia Medici ___ da Bologna.", "veniva", "venivano");
+  /* tiempos mezclados: la forma correcta puede ser passato prossimo o imperfetto (sin pista del tiempo) */
+  function fct(t, text, a, b, w) { ["ind_imperf", "ind_pp"].forEach(function (m) { FC.push({ m: m, t: t, text: text, o: [a, b], h: 1, w: w }); }); }
+  var DEL = "Acción delimitada o puntual (terminada) → passato prossimo.", DES = "Descripción, estado o acción continuada/habitual en el pasado → imperfetto.";
+  fct("ind_pp", "Proprio ora io ___ che Anna ha telefonato.", "ho saputo", "sapevo", "Sapere en passato prossimo = enterarse de algo.");
+  fct("ind_pp", "Nessuno ___ invitare Franco per Capodanno, e così è rimasto da solo a casa.", "ha voluto", "voleva", "Modal en passato prossimo: la acción ocurrió (o no) con seguridad.");
+  fct("ind_imperf", "A quei tempi Sonia non ___ ancora suo marito.", "conosceva", "ha conosciuto", "Conoscere en imperfetto = conocer a alguien desde hace tiempo (aquí: todavía no lo conocía).");
+  fct("ind_pp", "Sergio è triste perché ___ che non ha passato l'esame.", "ha saputo", "sapeva", "Sapere en passato prossimo = enterarse.");
+  fct("ind_imperf", "Non ___ lasciare la porta aperta! Ora il gatto è scappato.", "dovevi", "hai dovuto", "Modal en imperfetto: «deberías» (no era una necesidad cumplida).");
+  fct("ind_imperf", "Da bambina non ___ uscire da sola la sera.", "potevo", "ho potuto", "Hábito/situación habitual de la infancia → imperfetto.");
+  fct("ind_pp", "Mi dispiace, ma ho avuto così tanto da fare che non ___ finire quel lavoro!", "ho potuto", "potevo", "Modal en passato prossimo: la acción no se realizó con seguridad.");
+  fct("ind_pp", "I miei genitori ___ Pino a una festa di Carnevale.", "hanno conosciuto", "conoscevano", "Conoscere en passato prossimo = conocer por primera vez, que me presentaron a alguien.");
+  fct("ind_imperf", "___ telefonarti, ma non ho avuto tempo.", "Volevo", "Ho voluto", "Intención sin resultado seguro → imperfetto del modal.");
+  fct("ind_pp", "Per punizione oggi ___ restare in casa!", "sono dovuto", "dovevo", "Modal en passato prossimo: tuvo que quedarse y se quedó.");
+  fct("ind_imperf", "I Rossi ___ fare dei lavori in casa, ma hanno deciso di usare i soldi per andare in vacanza.", "dovevano", "hanno dovuto", "Modal en imperfetto: tenían la intención/necesidad, pero cambiaron de plan.");
+  fct("ind_imperf", "Davvero Franca si è fatta suora? Non lo ___!", "sapevo", "ho saputo", "Sapere en imperfetto = no tenía conocimiento de ello.");
+  fct("ind_pp", "Ieri ___ da Susi che Franca si è fatta suora.", "ho saputo", "sapevo", "Sapere en passato prossimo = enterarse por medio de alguien.");
+  fct("ind_pp", "___ appena ora della partenza di Mario.", "Ho saputo", "Sapevo", "«Appena ora» + enterarse → passato prossimo.");
+  fct("ind_imperf", "Mentre ___, sono entrati i ladri.", "dormivo", "ho dormito", "Después de «mentre», acción en curso → imperfetto.");
+  fct("ind_pp", "Per 5 anni io ___ inglese.", "ho studiato", "studiavo", DEL);
+  fct("ind_pp", "Paola ___ suo marito su Internet.", "ha conosciuto", "conosceva", "Conoscere en passato prossimo = conocer por primera vez.");
+  fct("ind_imperf", "Oggi ___ fare la dieta, ma non ho resistito.", "volevo", "ho voluto", "Intención que no se cumplió → imperfetto.");
+  fct("ind_pp", "Ieri ___ 10 ore!", "ho lavorato", "lavoravo", "«10 ore» = tiempo delimitado → passato prossimo.");
+  fct("ind_pp", "Ieri ___ dalle 10 alle 14.", "ho studiato", "studiavo", DEL);
+  fct("ind_pp", "Solo ora ___ da mio padre che mamma si è sentita male.", "ho saputo", "sapevo", "Sapere en passato prossimo = enterarse.");
+  fct("ind_imperf", "Da bambina ___ i capelli rossi.", "avevo", "ho avuto", "Descripción física en el pasado → imperfetto.");
+  fct("ind_imperf", "Noi ___ comprare un'auto, ma costava troppo.", "volevamo", "abbiamo voluto", "Intención sin resultado → imperfetto del modal.");
+  fct("ind_imperf", "Mentre ___, si è scaricata la batteria del cellulare.", "telefonavo", "ho telefonato", "Después de «mentre», acción en curso → imperfetto.");
+  fct("ind_imperf", "Mentre ___, l'hanno interrotta.", "parlava", "ha parlato", "Después de «mentre», acción en curso → imperfetto.");
+  fct("ind_imperf", "Nell'antichità ___ una città romana.", "era", "è stata", DES);
+  fct("ind_pp", "Per molti anni Torino ___ la sede dei Duchi di Savoia.", "è stata", "era", "«Per molti anni» marca un periodo delimitado y terminado → passato prossimo.");
+  fct("ind_pp", "Proprio in questa città la famiglia Agnelli ___ una grande fabbrica di auto.", "ha aperto", "apriva", "Hecho puntual → passato prossimo.");
+  fct("ind_pp", "La fabbrica ___ molto famosa in Italia e all'estero.", "è diventata", "diventava", "Cambio de estado terminado → passato prossimo.");
+  fct("ind_imperf", "Domenica il tempo non era buono: ___ un gran vento.", "c'era", "c'è stato", DES);
+  fct("ind_imperf", "Domenica faceva freddo e Carla non ___ molto bene.", "si sentiva", "si è sentita", DES);
+  fct("ind_imperf", "Federica non ___ in casa.", "era", "è stata", DES);
+  fct("ind_pp", "Carla ___ lasciare un messaggio sulla segreteria telefonica.", "ha dovuto", "doveva", "Modal en passato prossimo: lo hizo con seguridad.");
+  fct("ind_pp", "Monica ___ che non poteva venire.", "ha risposto", "rispondeva", DEL);
+  fct("ind_imperf", "Il figlio ha risposto che non ___ dove era la madre.", "sapeva", "ha saputo", DES);
+  fct("ind_pp", "Carla ___ una delle più belle domeniche degli ultimi anni.", "ha passato", "passava", DEL);
 })(typeof window !== 'undefined' ? window : globalThis);

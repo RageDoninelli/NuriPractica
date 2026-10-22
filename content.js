@@ -86,20 +86,49 @@
     '<h3>Usos y marcadores</h3><ul><li>Acción terminada, relacionada con el presente: <i>Ieri ho visto un film.</i></li><li>Marcadores: ieri, stamattina, la settimana scorsa, due anni fa, già, non… ancora, mai, un mese fa.</li>' +
     '<li><b>Passato prossimo vs imperfetto:</b> el prossimo cuenta el hecho puntual y terminado; el imperfetto describe el fondo, la costumbre o lo que estaba pasando.</li></ul>' });
 
-  add({ id: 'ind_imperf', grp: 'Indicativo', title: 'Imperfetto', tenses: ['ind_imperf'], kind: 'fin',
+  add({ id: 'ind_imperf', grp: 'Indicativo', title: 'Imperfetto', tenses: ['ind_imperf'], kind: 'fin', src: 'clase',
     theory:
-    '<h3>Formación</h3><p>Raíz del infinitivo + <b>-vo, -vi, -va, -vamo, -vate, -vano</b> con la vocal temática (a/e/i):</p>' +
-    '<table><tr><th></th><th>parlare</th><th>vendere</th><th>dormire</th></tr>' +
-    '<tr><td>io</td><td>parl<b>avo</b></td><td>vend<b>evo</b></td><td>dorm<b>ivo</b></td></tr>' +
-    '<tr><td>tu</td><td>parl<b>avi</b></td><td>vend<b>evi</b></td><td>dorm<b>ivi</b></td></tr>' +
-    '<tr><td>lui/lei</td><td>parl<b>ava</b></td><td>vend<b>eva</b></td><td>dorm<b>iva</b></td></tr>' +
-    '<tr><td>noi</td><td>parl<b>avamo</b></td><td>vend<b>evamo</b></td><td>dorm<b>ivamo</b></td></tr>' +
-    '<tr><td>voi</td><td>parl<b>avate</b></td><td>vend<b>evate</b></td><td>dorm<b>ivate</b></td></tr>' +
-    '<tr><td>loro</td><td>parl<b>avano</b></td><td>vend<b>evano</b></td><td>dorm<b>ivano</b></td></tr></table>' +
-    '<h3>Irregulares</h3><p><b>essere</b>: ero, eri, era, eravamo, eravate, erano.</p>' +
-    '<p>Raíz latina: <b>fare</b> → facevo · <b>dire</b> → dicevo · <b>bere</b> → bevevo · <b>porre</b> → ponevo · <b>tradurre</b> → traducevo.</p>' +
-    '<h3>Usos</h3><ul><li>Costumbres del pasado: <i>Da bambino giocavo ogni giorno.</i></li><li>Descripciones (físicas, de estado, del tiempo): <i>Era una bella giornata e faceva caldo.</i></li><li>Acción en curso interrumpida por otra: <i>Mangiavo quando è arrivato Marco.</i></li><li>Dos acciones simultáneas: <i>Mentre io leggevo, lei cucinava.</i></li><li>Edad y hora en el pasado: <i>Avevo dieci anni. Erano le tre.</i></li></ul>' +
-    '<p><b>Passato prossimo vs imperfetto:</b> el prossimo cuenta el hecho puntual y terminado; el imperfetto describe el fondo, la costumbre o lo que estaba pasando.</p>' });
+    '<h3>Forme dell\'imperfetto</h3><p>Casi todos los verbos tienen un imperfetto <b>regular</b>: <i>Da bambina giocavo con le bambole. · Una volta i ragazzi leggevano più libri. · Ieri sera non riuscivo a dormire per il caldo. · Aldo e Giorgio venivano spesso a trovarmi.</i></p>' +
+    '<p>Los verbos <b>essere, fare, dire y bere</b> tienen un imperfetto <b>irregular</b>: <i>Stamattina c\'era il sole ma faceva freddo. · Non ho capito che cosa diceva Carlo. · Quando ero piccolo non bevevo vino.</i></p>' +
+    '<h3>Verbos regulares</h3>' +
+    '<table><tr><th></th><th>am-are</th><th>ved-ere</th><th>apr-ire</th></tr>' +
+    '<tr><td>io</td><td>am<b>avo</b></td><td>ved<b>evo</b></td><td>apr<b>ivo</b></td></tr>' +
+    '<tr><td>tu</td><td>am<b>avi</b></td><td>ved<b>evi</b></td><td>apr<b>ivi</b></td></tr>' +
+    '<tr><td>lui/lei/Lei</td><td>am<b>ava</b></td><td>ved<b>eva</b></td><td>apr<b>iva</b></td></tr>' +
+    '<tr><td>noi</td><td>am<b>avamo</b></td><td>ved<b>evamo</b></td><td>apr<b>ivamo</b></td></tr>' +
+    '<tr><td>voi</td><td>am<b>avate</b></td><td>ved<b>evate</b></td><td>apr<b>ivate</b></td></tr>' +
+    '<tr><td>loro</td><td>am<b>avano</b></td><td>ved<b>evano</b></td><td>apr<b>ivano</b></td></tr></table>' +
+    '<h3>Verbos irregulares</h3>' +
+    '<table><tr><th></th><th>essere</th><th>fare</th><th>dire</th><th>bere</th></tr>' +
+    '<tr><td>io</td><td>ero</td><td>facevo</td><td>dicevo</td><td>bevevo</td></tr>' +
+    '<tr><td>tu</td><td>eri</td><td>facevi</td><td>dicevi</td><td>bevevi</td></tr>' +
+    '<tr><td>lui/lei/Lei</td><td>era</td><td>faceva</td><td>diceva</td><td>beveva</td></tr>' +
+    '<tr><td>noi</td><td>eravamo</td><td>facevamo</td><td>dicevamo</td><td>bevevamo</td></tr>' +
+    '<tr><td>voi</td><td>eravate</td><td>facevate</td><td>dicevate</td><td>bevevate</td></tr>' +
+    '<tr><td>loro</td><td>erano</td><td>facevano</td><td>dicevano</td><td>bevevano</td></tr></table>' +
+    '<p>Otros con raíz latina: <b>porre</b> → ponevo · <b>tradurre</b> → traducevo · <b>produrre</b> → producevo · <b>comporre</b> → componevo.</p>' +
+    '<h3>Uso del imperfetto</h3><p>El imperfetto se usa normalmente:</p><ul>' +
+    '<li><b>a)</b> en una <b>descripción física o atmosférica</b>: <i>Da bambina avevo i capelli biondi. · Faceva così freddo ieri!</i></li>' +
+    '<li><b>b)</b> para indicar una <b>repetición o un hábito</b>: <i>D\'estate andavamo al mare tutti i giorni. · Ricordo che di solito dicevi molte bugie.</i></li>' +
+    '<li><b>c)</b> en una <b>descripción psicológica</b>, una sensación o un sentimiento: <i>Non sono venuto perché ero depresso. · Anna non si sentiva bene ieri.</i></li>' +
+    '<li><b>d)</b> al <b>inicio de una fábula</b>: <i>C\'era una volta un re che aveva una figlia bellissima.</i></li>' +
+    '<li><b>e)</b> con las expresiones <b>stare + gerundio</b> y <b>stare per</b>: <i>Stavate mangiando? · Stavano per uscire quando siamo entrati.</i></li>' +
+    '<li><b>f)</b> después de la palabra <b>mentre</b>: <i>Mentre guardavamo la TV è saltata la luce.</i></li>' +
+    '<li><b>g)</b> cuando se expresa una <b>acción continuada</b>, que no ha terminado o no ha sido limitada en el tiempo: <i>Aspettavo l\'autobus già da mezz\'ora quando è passato mio padre in macchina. · Anna era in casa e leggeva il giornale.</i></li></ul>' +
+    '<p>Si la acción está <b>delimitada en el tiempo</b>, se prefiere el <b>passato prossimo</b>: <i>Ieri ho studiato tutto il giorno. · Abbiamo lavorato dalle 9 alle 5.</i></p>' +
+    '<h3>Lo sai che…</h3><p>En el italiano coloquial se usa a menudo el imperfetto en lugar del indicativo o del condicional presente cuando queremos expresar una <b>petición de manera más amable</b>, sobre todo en una tienda: <i>Buongiorno, <b>volevo</b> tre etti di prosciutto.</i> (volevo = voglio / vorrei).</p>' +
+    '<h3>Passato prossimo o imperfetto de algunos verbos</h3><p>Algunos verbos <b>cambian de significado</b> según estén en passato prossimo o en imperfetto.</p>' +
+    '<p><b>Dovere, potere, volere</b> (verbos modales):</p><ul>' +
+    '<li><b>a) Imperfetto:</b> indican una <b>incertidumbre</b> (la acción quizá ocurrió y quizá no): <i>Dovevo studiare (e forse ho studiato o forse no). · Mia sorella voleva comprare un motorino (e forse lo ha comprato o forse no). · Non potevo rispondere al telefono (e forse non ho risposto o forse sì).</i></li>' +
+    '<li><b>b) Passato prossimo:</b> la acción ocurrió <b>con seguridad</b>: <i>Ieri ho dovuto studiare 3 capitoli di storia (e li ho studiati). · Ieri non ho voluto lavorare (e non ho lavorato). · Non siamo potuti andare in vacanza per mancanza di soldi (e non ci siamo andati).</i></li></ul>' +
+    '<p><b>Conoscere:</b></p><ul>' +
+    '<li><b>Imperfetto</b> = «conocer a alguien desde hace tiempo»: <i>Conoscevi i miei genitori?</i></li>' +
+    '<li><b>Passato prossimo</b> = «que me han presentado a alguien, que he encontrado a alguien por primera vez»: <i>Ho conosciuto tuo fratello ieri.</i></li></ul>' +
+    '<p><b>Sapere:</b></p><ul>' +
+    '<li><b>Imperfetto</b> = «conocer una cosa desde hace tiempo»: <i>Lo sapevi che ho una casa a Roma?</i></li>' +
+    '<li><b>Passato prossimo</b> = «enterarse de algo por medio de alguien»: <i>Ho appena saputo che ti sei sposato!</i></li></ul>' +
+    '<h3>Passato prossimo vs imperfetto</h3><p>El passato prossimo cuenta el hecho puntual y terminado; el imperfetto describe el fondo, la costumbre o lo que estaba pasando: <i>Mentre Silvia si trovava all\'ospedale, il padre era al lavoro e aspettava una telefonata. Appena è arrivata la buona notizia, si è alzato ed è uscito di corsa.</i></p>' +
+    '<p>Los dos tiempos conviven en un mismo relato: <b>imperfetto</b> para describir la escena (tiempo, lugar, personas, estados de ánimo) y <b>passato prossimo</b> para los hechos que hacen avanzar la historia.</p>' });
 
   add({ id: 'ind_trap_pross', grp: 'Indicativo', title: 'Trapassato prossimo', tenses: ['ind_trap_pross'], kind: 'fin',
     theory:
