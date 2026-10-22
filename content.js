@@ -5,8 +5,14 @@
   function add(m) { M.push(m); }
 
   /* ================= INDICATIVO ================= */
-  add({ id: 'ind_pres', grp: 'Indicativo', title: 'Presente', tenses: ['ind_pres'], kind: 'fin',
+  add({ id: 'ind_pres', grp: 'Indicativo', title: 'Presente', tenses: ['ind_pres'], kind: 'fin', src: 'clase',
     theory:
+    '<h3>Los 3 grupos de verbos regulares</h3>' +
+    '<p>Los verbos regulares italianos se dividen en 3 grupos según su terminación: <b>-are, -ere, -ire</b>.</p>' +
+    '<ul><li><b>Grupo 1 · -are:</b> parlare → <i>Parlo inglese e francese.</i> (comprare → Compro un giornale · giocare → Simona gioca a tennis · lavorare → Lavoriamo in banca · ascoltare → Ascoltate la radio · suonare → Suonano la chitarra)</li>' +
+    '<li><b>Grupo 2 · -ere:</b> vedere → <i>Vedo un film.</i> (chiudere → Chiudi la porta · scrivere → Signora, a chi scrive? · mettere → Mettiamo un maglione · leggere → Leggete un libro · rispondere → Rispondono bene)</li>' +
+    '<li><b>Grupo 3a · -ire:</b> partire → <i>Parto alle 16.00.</i> (dormire → Dormi sempre troppo · sentire → Carlo sente la musica · aprire → Apriamo la finestra · offrire → Offrite voi il caffè? · seguire → Seguono le istruzioni)</li>' +
+    '<li><b>Grupo 3b · -ire (-isc-):</b> capire → <i>Non capisco.</i> (finire → La lezione finisce alle 13.00 · pulire → Puliamo il bagno · preferire → Preferite vino o birra? · costruire → Costruiscono una casa)</li></ul>' +
     '<h3>Formación</h3>' +
     '<p>Se quita <b>-are / -ere / -ire</b> y se añaden las terminaciones:</p>' +
     '<table><tr><th></th><th>-ARE</th><th>-ERE</th><th>-IRE</th><th>-IRE (-isc-)</th></tr>' +
@@ -29,7 +35,8 @@
     '<tr><td>voi</td><td>siete</td><td>avete</td><td>fate</td><td>andate</td><td>venite</td><td>date</td><td>state</td></tr>' +
     '<tr><td>loro</td><td>sono</td><td>hanno</td><td>fanno</td><td>vanno</td><td>vengono</td><td>danno</td><td>stanno</td></tr></table>' +
     '<p>Otros: <b>dire</b> dico, dici, dice, diciamo, dite, dicono · <b>potere</b> posso, puoi, può, possiamo, potete, possono · <b>volere</b> voglio, vuoi, vuole, vogliamo, volete, vogliono · <b>dovere</b> devo, devi, deve, dobbiamo, dovete, devono · <b>sapere</b> so, sai, sa, sappiamo, sapete, sanno · <b>uscire</b> esco, esci, esce, usciamo, uscite, escono · <b>bere</b> bevo, bevi… · <b>tenere</b> tengo, tieni… · <b>salire</b> salgo, sali… · <b>scegliere</b> scelgo, scegli… · <b>rimanere</b> rimango, rimani…</p>' +
-    '<h3>Usos</h3><ul><li>Acciones actuales y habituales: <i>Ogni giorno mangio alle due.</i></li><li>Verdades generales: <i>L\'acqua bolle a cento gradi.</i></li><li>Futuro próximo: <i>Domani parto per Roma.</i></li><li><b>stare + gerundio</b>: acción en curso: <i>Sto studiando.</i></li></ul>' });
+    '<h3>Usos</h3><ul><li>Acciones actuales y habituales: <i>Ogni giorno mangio alle due.</i></li><li>Verdades generales: <i>L\'acqua bolle a cento gradi.</i></li><li>Futuro próximo: <i>Domani parto per Roma.</i></li><li><b>stare + gerundio</b>: acción en curso: <i>Sto studiando.</i></li>' +
+    '<li><b>Lo sai che…</b> Se la frase lleva una expresión de tiempo (<i>domani, il mese prossimo, fra qualche mese</i>…), el presente se usa en lugar del futuro: <i>Domani parto per le vacanze. · Giovedì prossimo arrivano i miei amici.</i></li></ul>' });
 
   add({ id: 'ind_pp', grp: 'Indicativo', title: 'Passato prossimo', tenses: ['ind_pp'], kind: 'fin', src: 'clase',
     theory:

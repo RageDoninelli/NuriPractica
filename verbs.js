@@ -169,7 +169,20 @@
     { inf: 'occuparsi', es: 'ocuparse' }, { inf: 'salvarsi', es: 'salvarse' }, { inf: 'ferirsi', es: 'herirse', isc: 1 },
     { inf: 'mettersi', es: 'ponerse', pp: 'messo', pr: 'mis', irr: 1 },
     { inf: 'conoscersi', es: 'conocerse', pp: 'conosciuto', pr: 'conobb', irr: 1 },
-    { inf: 'accorgersi', es: 'darse cuenta', pp: 'accorto', pr: 'accors', irr: 1 }
+    { inf: 'accorgersi', es: 'darse cuenta', pp: 'accorto', pr: 'accors', irr: 1 },
+    /* — presente regular (libro) — */
+    { inf: 'suonare', es: 'tocar, sonar' }, { inf: 'guidare', es: 'conducir' }, { inf: 'ospitare', es: 'hospedar, acoger' },
+    { inf: 'aggiornare', es: 'actualizar' }, { inf: 'cancellare', es: 'borrar, cancelar' }, { inf: 'partecipare', es: 'participar' },
+    { inf: 'cambiare', es: 'cambiar' }, { inf: 'celebrare', es: 'celebrar' }, { inf: 'indossare', es: 'llevar puesto' },
+    { inf: 'disegnare', es: 'dibujar, diseñar' }, { inf: 'aspettare', es: 'esperar' },
+    { inf: 'allestire', es: 'montar, preparar', isc: 1 }, { inf: 'inserire', es: 'insertar', isc: 1 }, { inf: 'agire', es: 'actuar', isc: 1 }, { inf: 'approfittare', es: 'aprovechar' }, { inf: 'ammirare', es: 'admirar' }, { inf: 'insegnare', es: 'enseñar' }, { inf: 'girare', es: 'girar, recorrer' }, { inf: 'aggredire', es: 'agredir', isc: 1 },
+    { inf: 'permettere', es: 'permitir', pp: 'permesso', pr: 'permis', ppres: 'permettente', irr: 1 },
+    { inf: 'riprendere', es: 'retomar', pp: 'ripreso', pr: 'ripres', ppres: 'riprendente', irr: 1 },
+    { inf: 'comprendere', es: 'comprender', pp: 'compreso', pr: 'compres', ppres: 'comprendente', irr: 1 },
+    { inf: 'nascondere', es: 'esconder', pp: 'nascosto', pr: 'nascos', ppres: 'nascondente', irr: 1 },
+    { inf: 'assistere', es: 'asistir', pp: 'assistito', ppres: 'assistente' },
+    { inf: 'risalire', es: 'remontarse', aux: 'essere', pp: 'risalito', pres: 'risalgo risali risale risaliamo risalite risalgono', ppres: 'risalente', irr: 1 },
+    { inf: 'fuggire', es: 'huir', aux: 'essere', pp: 'fuggito', ppres: 'fuggente' }
   ];
   g.VERBS = V;
   if (g.IT) g.IT.load(V);

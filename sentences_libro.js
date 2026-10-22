@@ -1,4 +1,4 @@
-/* Nuri practica — ejercicios del LIBRO DE CLASE: passato prossimo.
+/* Nuri practica — ejercicios del LIBRO DE CLASE: passato prossimo y presente regular.
    Formato de fila: [texto con ___, verbo, persona 0-5, género 'm'/'f'/null, ausiliare]
    · ausiliare: 'essere' | 'avere' | 'essere|avere' (acepta ambas, la primera es la principal).
    · En part_pass: [texto, verbo, respuestas|alternativas] (concordancia).
@@ -182,4 +182,97 @@
   fc('Mario ___ Marella.', 'ha sposato', 'è sposato');
   fc('Questa borsa ___ molto.', 'è costata', 'ha costata');
   fc('Mio nonno ___ molto tempo fa.', 'è morto', 'ha morto');
+
+  /* =================== PRESENTE DE LOS VERBOS REGULARES (libro) =================== */
+  S.ind_pres = S.ind_pres.concat([
+    /* — Ej. 3 · verbos en -are — */
+    ['Io ___ (lavorare) in banca.', 'lavorare', 0], ['Stefano ___ (parlare) bene l\'inglese perché abita in America.', 'parlare', 2],
+    ['Stefano parla bene l\'inglese perché ___ (abitare) in America.', 'abitare', 2], ['Quando ___ (giocare) a calcio, voi?', 'giocare', 4],
+    ['Io ___ (pensare) spesso alla mia famiglia.', 'pensare', 0], ['Scusi, a che ora ___ (arrivare) il treno?', 'arrivare', 2],
+    ['Perché non ___ (comprare) un biglietto della lotteria, tu?', 'comprare', 1], ['Anna ___ (portare) la figlia a scuola.', 'portare', 2],
+    ['Normalmente gli italiani ___ (studiare) inglese a scuola.', 'studiare', 5], ['Noi ___ (tornare) a Roma lunedì.', 'tornare', 3],
+    ['Signora, Lei ___ (guidare)?', 'guidare', 2],
+    /* — Ej. 4 · verbos en -ere — */
+    ['Tu ___ (vedere) quella donna? È russa.', 'vedere', 1], ['Io ___ (perdere) sempre le chiavi di casa.', 'perdere', 0],
+    ['Scusi, Lei ___ (chiudere) la porta, per piacere?', 'chiudere', 2], ['Io ___ (vivere) in Inghilterra da 4 anni.', 'vivere', 0],
+    ['Se voi non ___ (mettere) l\'indirizzo corretto, la lettera non arriva.', 'mettere', 4], ['Loro non ___ (permettere) al figlio di uscire la sera.', 'permettere', 5],
+    ['Mia sorella non ___ (vivere) in un appartamento.', 'vivere', 2], ['Paola ___ (cadere) spesso da cavallo.', 'cadere', 2],
+    ['Alberto è un pittore e ___ (vendere) molti quadri.', 'vendere', 2], ['Noi ___ (vedere) molti film.', 'vedere', 3],
+    /* — Ej. 5 · verbos en -ire — */
+    ['"Quale vino ___ (preferire) Lei?" "D\'estate io preferisco il bianco."', 'preferire', 2], ['"Quale vino preferisce Lei?" "D\'estate io ___ (preferire) il bianco."', 'preferire', 0],
+    ['L\'aereo per Parigi ___ (partire) alle 18.30.', 'partire', 2], ['A che ora ___ (finire) di lavorare, tu?', 'finire', 1],
+    ['___ (sentire) questa musica, tu?', 'sentire', 1], ['Il concerto ___ (finire) fra un\'ora.', 'finire', 2],
+    ['Anna ___ (dormire) sempre troppo.', 'dormire', 2], ['Loro non ___ (capire) l\'inglese.', 'capire', 5],
+    ['Oggi ___ (offrire) noi!', 'offrire', 3], ['Oggi io ___ (pulire) il bagno.', 'pulire', 0], ['A che ora ___ (partire), voi?', 'partire', 4],
+    /* — Ej. 6 · -are, -ere, -ire — */
+    ['Paola ___ (vivere) a Venezia e lavora in un negozio di abbigliamento.', 'vivere', 2], ['Paola vive a Venezia e ___ (lavorare) in un negozio di abbigliamento.', 'lavorare', 2],
+    ['Quando io ___ (studiare), ascolto sempre la radio.', 'studiare', 0], ['Quando studio, io ___ (ascoltare) sempre la radio.', 'ascoltare', 0],
+    ['Ornella e Luca ___ (partire) oggi per le vacanze.', 'partire', 5], ['Loro ___ (prendere) il treno fino a Napoli e poi il traghetto fino a Ischia.', 'prendere', 5],
+    ['Perché non ___ (pulire) la cucina, tu, quando mangi?', 'pulire', 1], ['Voi ___ (lavorare) troppo.', 'lavorare', 4],
+    ['Signor Fabi, se ___ (preferire) un appuntamento per la prossima settimana, io sono libero martedì pomeriggio.', 'preferire', 2],
+    ['Annalisa ___ (giocare) molto bene a tennis.', 'giocare', 2], ['Quando l\'insegnante ___ (parlare) veloce, gli studenti non capiscono quasi niente.', 'parlare', 2],
+    ['Quando l\'insegnante parla veloce, gli studenti non ___ (capire) quasi niente.', 'capire', 5], ['Questo esercizio non ___ (finire) mai!', 'finire', 2],
+    ['Signora, ___ (vedere) quella fontana?', 'vedere', 2], ['L\'autobus ___ (passare) proprio lì davanti.', 'passare', 2],
+    /* — Ej. 9 · Il primo maggio in Italia — */
+    ['Il primo maggio nessuno ___ (lavorare) e molti approfittano della giornata libera.', 'lavorare', 2], ['Il primo maggio nessuno lavora e molti ___ (approfittare) della giornata libera.', 'approfittare', 5],
+    ['Questa festività ___ (risalire) al 1886, quando, durante una protesta a Chicago, la polizia ha ucciso i protestanti.', 'risalire', 2], ['Durante una protesta a Chicago, la polizia ___ (aggredire) i protestanti.', 'aggredire', 2],
+    ['Così ___ (nascere) la festa del 1° maggio.', 'nascere', 2], ['In molti paesi la festa ___ (diventare) ufficiale.', 'diventare', 2],
+    ['Il regime fascista ___ (cancellare) questo giorno di festa.', 'cancellare', 2], ['Il regime fascista ___ (inserire) al suo posto la celebrazione della Festa del Lavoro Italiano.', 'inserire', 2],
+    ['Dopo la guerra la Repubblica Italiana ___ (riprendere) questo giorno festivo.', 'riprendere', 2], ['Oggi i sindacati ___ (organizzare) a Roma un concerto.', 'organizzare', 5],
+    ['Al concerto ___ (partecipare) centinaia di migliaia di persone.', 'partecipare', 5],
+    /* — Ej. 10 · città (Venezia, Napoli, Matera) — */
+    ['In questa città gli abitanti ___ (viaggiare) con barche, vaporetti o a piedi.', 'viaggiare', 5], ['Ogni anno a febbraio gli abitanti ___ (organizzare) bellissime feste in maschera.', 'organizzare', 5],
+    ['La città ___ (ospitare) un famoso Festival Internazionale del Cinema.', 'ospitare', 2], ['Ogni due anni la città ___ (allestire) la Biennale d\'Arte Moderna.', 'allestire', 2],
+    ['Quando ___ (visitare) questa città, tu trovi tantissime cose da fare.', 'visitare', 1], ['Se ___ (decidere) di girare il centro, tu scopri degli angoli molto particolari.', 'decidere', 1],
+    ['Se decidi di girare il centro, ___ (scoprire) degli angoli molto particolari, tu.', 'scoprire', 1], ['Se ___ (camminare) lungo il mare, tu vedi un vulcano famosissimo.', 'camminare', 1],
+    ['Se cammini lungo il mare, ___ (vedere) un vulcano famosissimo, tu.', 'vedere', 1], ['Se ___ (passare) da questa città a Natale, devi visitare via San Gregorio Armeno.', 'passare', 1],
+    ['In quel periodo via San Gregorio Armeno ___ (diventare) una strada bellissima.', 'diventare', 2], ['Con molti negozi di artigiani che ___ (vendere) le statue del presepe.', 'vendere', 5],
+    ['Gli abitanti di questa città ___ (mangiare) la vera pizza originale.', 'mangiare', 5], ['Gli abitanti ___ (preparare) il caffè più buono d\'Italia.', 'preparare', 5],
+    ['Gli abitanti di questa piccola città della Basilicata ___ (abitare) in collina.', 'abitare', 5], ['I turisti ___ (camminare) fra i Sassi.', 'camminare', 5],
+    ['I turisti ___ (ammirare) le antiche case della città.', 'ammirare', 5], ['Qui i turisti ___ (visitare) anche la cattedrale medievale.', 'visitare', 5],
+    ['Noi ___ (trovare) anche un bel castello, il Castello Tramontano.', 'trovare', 3],
+    /* — Ej. 11 · el libro (Io non ho paura) — */
+    ['Tutto ___ (succedere) nel 1978.', 'succedere', 2], ['Il protagonista, un ragazzino che ___ (scoprire) un terribile segreto, si chiama Michele.', 'scoprire', 2],
+    ['Un giorno, mentre ___ (giocare) con gli amici, lui trova un pozzo.', 'giocare', 2], ['Un giorno, mentre gioca con gli amici, lui ___ (trovare) un pozzo.', 'trovare', 2],
+    ['Dentro il pozzo lui ___ (vedere) un bambino come lui, Filippo.', 'vedere', 2], ['Michele e Filippo ___ (diventare) amici.', 'diventare', 5],
+    ['Più tardi Michele ___ (capire) che i suoi genitori nascondono Filippo.', 'capire', 2], ['I suoi genitori ___ (nascondere) Filippo per avere dei soldi.', 'nascondere', 5],
+    ['Michele ___ (decidere) di aiutare Filippo a fuggire.', 'decidere', 2], ['Michele ___ (agire) con coraggio contro i suoi genitori.', 'agire', 2],
+    ['Michele ___ (vincere) la paura.', 'vincere', 2],
+    /* — Ej. 12 · palabras del recuadro (cambia, crescono, hanno, sono…) — */
+    ['L\'interesse per la lingua italiana nel mondo ___ (cambiare).', 'cambiare', 2], ['Il numero degli studenti ___ (crescere) ogni anno.', 'crescere', 2],
+    ['I corsi di italiano ___ (crescere) quasi del doppio.', 'crescere', 5], ['Anche gli studenti dell\'Europa centro-occidentale ___ (amare) molto l\'italiano.', 'amare', 5],
+    ['Gli studenti africani ___ (mettere) il lavoro come prima motivazione.', 'mettere', 5], ['Noi ___ (vedere) che i risultati sono molto diversi.', 'vedere', 3],
+    ['Perché gli stranieri ___ (preferire) la nostra lingua?', 'preferire', 5], ['Oceania e Nord America ___ (seguire) le preferenze europee.', 'seguire', 5],
+    ['Gli Istituti Italiani di Cultura ___ (organizzare) molti corsi.', 'organizzare', 5], ['A Tokyo e a Kyoto ___ (essere) due Istituti Italiani di Cultura.', 'essere', 5],
+    ['Gli istituti ___ (avere) circa 1800 corsi di italiano.', 'avere', 5], ['In Giappone la lingua italiana ___ (arrivare) con molti studenti.', 'arrivare', 2],
+    /* — Ej. 13 · presentaciones (3ª persona) — */
+    ['Andrea ___ (abitare) in centro e lavora in un\'agenzia turistica.', 'abitare', 2], ['Andrea abita in centro, dove ___ (lavorare) in un\'agenzia turistica dal lunedì al venerdì.', 'lavorare', 2],
+    ['Di solito Andrea ___ (cominciare) a lavorare alle 9.00 e finisce alle 5.00.', 'cominciare', 2], ['Di solito Andrea comincia alle 9.00 e ___ (finire) alle 5.00.', 'finire', 2],
+    ['Tre volte alla settimana Andrea ___ (giocare) a tennis con un amico.', 'giocare', 2], ['Andrea non è fidanzato perché ___ (preferire) rimanere libero e indipendente.', 'preferire', 2],
+    ['La sera Andrea ___ (vedere) spesso gli amici.', 'vedere', 2], ['Veronica ___ (insegnare) in una scuola elementare.', 'insegnare', 2],
+    ['Veronica ___ (leggere) molto e spende molti soldi nelle librerie.', 'leggere', 2], ['Veronica legge molto e ___ (spendere) molti soldi nelle librerie.', 'spendere', 2],
+    ['Qualche volta Veronica ___ (pensare) di scrivere un libro sui bambini.', 'pensare', 2], ['Caterina ___ (lavorare) in una società informatica come designer grafico.', 'lavorare', 2],
+    ['Quando non ha idee, Caterina ___ (prendere) la macchina e gira lungo la costa.', 'prendere', 2], ['Quando non ha idee, Caterina prende la macchina e ___ (girare) lungo la costa.', 'girare', 2],
+    ['Caterina ___ (viaggiare) volentieri e conosce sempre nuove persone.', 'viaggiare', 2], ['Caterina viaggia volentieri e ___ (conoscere) sempre nuove persone.', 'conoscere', 2]
+  ]);
+
+  function fcm(t, text, a, b) { FC.push({ m: 'ind_pres', t: 'ind_pres', text: text, o: [a, b] }); }
+  /* Ej. 1 · los oficios */
+  fcm('', 'Il postino ___.', 'porta la posta', 'scrive libri'); fcm('', 'Il commesso ___.', 'serve i clienti di un negozio', 'lavora in casa');
+  fcm('', 'Lo spazzino ___.', 'pulisce le strade', 'dipinge quadri'); fcm('', 'Il barista ___.', 'lavora in un bar', 'canta le canzoni');
+  fcm('', 'Il pittore ___.', 'dipinge quadri', 'prepara da mangiare'); fcm('', 'Il cantante ___.', 'canta le canzoni', 'esegue gli ordini');
+  fcm('', 'L\'infermiere ___.', 'lavora in un ospedale', 'lavora in ufficio'); fcm('', 'Il cuoco ___.', 'prepara da mangiare', 'scrive libri');
+  fcm('', 'Il militare ___.', 'esegue gli ordini', 'progetta macchine'); fcm('', 'La casalinga ___.', 'lavora in casa', 'serve i clienti di un negozio');
+  fcm('', 'L\'impiegato ___.', 'lavora in ufficio', 'lavora in un bar'); fcm('', 'L\'ingegnere ___.', 'progetta macchine', 'porta la posta');
+  fcm('', 'Lo scrittore ___.', 'scrive libri', 'pulisce le strade');
+  /* Ej. 8 · elige el verbo correcto (Andrea B., il Papa, Giorgio A.) */
+  fcm('', 'Sono italiano e ___ tutto il mondo per cantare.', 'giro', 'gira'); fcm('', 'Io ___ in Italia.', 'vivo', 'vive');
+  fcm('', 'Gli italiani mi ___ perché vedono i miei concerti.', 'conoscono', 'conosciamo'); fcm('', 'Gli italiani ___ i miei dischi.', 'comprano', 'compra');
+  fcm('', 'Mi ___ Andrea.', 'chiamo', 'chiama'); fcm('', 'Io ___ molti tipi di musica.', 'canto', 'canta');
+  fcm('', 'Io ___ in un piccolo stato indipendente dentro l\'Italia.', 'abito', 'abita'); fcm('', 'Io ___ un lavoro di responsabilità.', 'ho', 'ha');
+  fcm('', 'Io ___ molto.', 'viaggio', 'viaggiamo'); fcm('', 'Di solito io ___ abiti bianchi e lunghi.', 'porto', 'porta');
+  fcm('', 'La domenica molta gente ___ di vedermi.', 'aspetta', 'aspettano'); fcm('', 'Quando io ___ la finestra, parlo.', 'apro', 'apre');
+  fcm('', 'Le guardie del mio stato ___ tedesco.', 'parlano', 'parlate'); fcm('', 'Io ___ a Milano e lavoro a Milano.', 'vivo', 'vive');
+  fcm('', 'Uomini e donne ___ i vestiti che io disegno.', 'indossano', 'indossiamo'); fcm('', 'Molte modelle ___ per me.', 'lavorano', 'lavora');
+  fcm('', 'I miei vestiti ___ molti soldi.', 'costano', 'costa'); fcm('', 'Mi ___ Giorgio.', 'chiamo', 'chiamano');
 })(typeof window !== 'undefined' ? window : globalThis);

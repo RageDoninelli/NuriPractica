@@ -269,7 +269,7 @@
     return n === 1;
   }
 
-  var EXTRA = { ind_pp: ['aux', 'infin', 'fc', 'fc'], ind_pres: [], part_pass: [] };
+  var EXTRA = { ind_pp: ['aux', 'infin', 'fc', 'fc'], ind_pres: ['fc', 'fc'], part_pass: [] };
   function rand(modId, opts) {
     opts = opts || {};
     var m = modOf(modId), t = pick(m.tenses), nf = isNF(t);
