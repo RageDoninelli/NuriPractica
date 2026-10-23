@@ -27,7 +27,7 @@
     cong_trap: 'Congiuntivo trapassato = <b>congiuntivo imperfetto</b> de avere/essere + participio passato.',
     cond_pres: 'Condizionale presente: raíz del futuro + -ei, -esti, -ebbe, -emmo, -este, -ebbero.',
     cond_pass: 'Condizionale passato = <b>condizionale presente</b> de avere/essere + participio passato.',
-    imp_pres: 'Imperativo: tu = presente (-are: -a), Lei / Loro = congiuntivo presente, noi y voi = presente. Los pronombres van pegados en tu, noi y voi.',
+    imp_pres: 'Imperativo: tu = presente (-are: -a), Lei / Loro = congiuntivo presente, noi y voi = presente. Los pronombres van pegados en tu, noi y voi. Negativo: tu = non + infinitivo; noi y voi = non + la misma forma.',
     inf_pres: 'Infinito presente: -are, -ere, -ire (reflexivos: -arsi, -ersi, -irsi).',
     inf_pass: 'Infinito passato = infinitivo de avere/essere + participio passato (avere mangiato, essere andato/a).',
     part_pres: 'Participio presente: -are → -ante; -ere/-ire → -ente (o -iente).',
@@ -150,6 +150,39 @@
     return list;
   }
 
+
+  /* ---- imperativo: negativo y pronombres (banco SENTENCES_IMP) ---- */
+  var RULE_NEG = 'Imperativo negativo: tu = non + infinitivo (non parlare); noi y voi = non + la misma forma (non parliamo, non parlate). Con pronombres hay dos posibilidades: antes (non lo bere) o pegados (non berlo).';
+  var RULE_PRON = 'Con el imperativo directo, los pronombres y las partículas ci y ne van pegados al final (guardali, parlatene, andiamoci). Con va\', da\', fa\', sta\', di\' se duplica la consonante inicial del pronombre (vacci, dammi, fagli → gli no se duplica).';
+  function varWrongs(iv, p, cl, neg, okList) {
+    var out = [], inf = iv.inf, rre = /rre$/.test(inf), infB = rre ? inf.slice(0, -2) : inf.slice(0, -1);
+    var okN = okList.map(function (x) { return IT.norm(x, true); });
+    function add(x) { if (x && okN.indexOf(IT.norm(x, true)) < 0 && out.indexOf(x) < 0) out.push(x); }
+    var posE = IT.forms(iv, 'imp_pres'), pos = posE[p].a[0], tuF = posE[0].a[0], leiF = posE[1].a[0];
+    var ptu = IT.forms(iv, 'ind_pres')[1].d;
+    if (!neg && cl && !iv.refl && cl !== 'loro') {
+      if (p === 0 && /'$/.test(pos)) { add(pos.slice(0, -1) + cl); add(pos + cl); }
+      else { add(leiF + cl); add(infB + cl); }
+      add(infB + cl); add(cl + ' ' + pos);
+      if (cl.length === 2) add(pos + cl.charAt(0) + cl);
+    } else if (!neg && cl === 'loro') {
+      add('loro ' + pos); add(leiF + ' loro'); add(posE[3].a[0] + ' loro');
+    } else if (neg) {
+      var pre = neg === 1 ? 'non ' : '';
+      if (p === 0) { add(pre + tuF); add(pre + ptu); add(pre + leiF); add(pre + posE[3].a[0]); }
+      else { add(pre + posE[0].a[0]); add(pre + inf); add(pre + posE[p === 2 ? 3 : 2].a[0]); add(pre + posE[1].a[0]); }
+      if (!iv.refl && cl) { add(pre + infB + cl + ' ' + inf); }
+    } else {
+      var w = wrongs(iv, 'imp_pres', p, null); w.forEach(add);
+    }
+    return out;
+  }
+  function varChoices(iv, p, cl, neg, ok) {
+    var w = varWrongs(iv, p, cl, neg, ok.a);
+    if (w.length < 3) return null;
+    return shuffle([{ t: ok.d, ok: true }].concat(shuffle(w).slice(0, 3).map(function (x) { return { t: x, ok: false }; })));
+  }
+
   /* ---- ensamblado de preguntas ---- */
   function result(base) { base.key = JSON.stringify(base.params); return base; }
 
@@ -159,6 +192,32 @@
     var kind = P.kind;
     var out = { params: P, mod: P.mod, t: t, rule: RULES[t], strictAcc: true };
 
+    if (kind === 'ineg') {
+      var ne = IT.impVar(v, P.p, null, 1);
+      out.type = 'typed'; out.t = 'imp_pres';
+      out.prompt = '<span class="pron">' + IT.IP[P.p] + '</span> <span class="vb">' + v.inf + '</span> <small>(' + v.es + ')</small>';
+      out.sub = 'Imperativo negativo · escribe «non» + la forma' + (v.refl ? ' (con el pronombre reflexivo)' : '');
+      out.answer = ne; out.gender = null; out.rule = RULE_NEG;
+      return result(out);
+    }
+    if (kind === 'ivar' || kind === 'ivarc') {
+      var irow = g.SENTENCES_IMP[P.i], iv = IT.find(irow[1]), ip = irow[2], icl = irow[3] || null, ing = irow[4] || 0;
+      var ie = IT.impVar(iv, ip, icl, ing);
+      out.t = 'imp_pres'; out.verb = iv.inf;
+      out.prompt = esc(irow[0]).replace('___', '<span class="gap">_____</span>');
+      out.sub = ing === 2 ? 'Imperativo · la frase ya trae «non»: escribe solo lo que falta'
+        : icl && !ing ? 'Imperativo + pronombre o partícula pegados (' + IT.IP[ip] + ')'
+        : ing === 1 ? 'Imperativo negativo (' + IT.IP[ip] + ') · incluye «non»'
+        : 'Imperativo (' + IT.IP[ip] + ')';
+      out.answer = ie; out.gender = null; out.rule = ing ? RULE_NEG : (icl ? RULE_PRON : RULES.imp_pres);
+      if (kind === 'ivarc') {
+        out.type = 'choice'; out.display = ie.d;
+        out.choices = P.cs ? P.cs : varChoices(iv, ip, icl, ing, ie);
+        out.sub = out.sub.replace('Imperativo', 'Imperativo · elige') ;
+      } else out.type = 'typed';
+      out.fullSentence = irow[0].replace('___', ie.d);
+      return result(out);
+    }
     if (kind === 'conj') {
       var e = entFor(v, t, P.p);
       out.type = 'typed';
@@ -203,7 +262,7 @@
       var fr = g.SENTENCES_FC[P.i];
       out.type = 'choice'; out.t = fr.t;
       out.prompt = esc(fr.text).replace('___', '<span class="gap">_____</span>');
-      out.sub = (fr.h ? '' : label(fr.t) + ' · ') + 'elige la forma correcta';
+      out.sub = fr.s || ((fr.h ? '' : label(fr.t) + ' · ') + 'elige la forma correcta');
       var opts = fr.o.map(function (x, k) { return { t: x, ok: k === 0 }; });
       out.choices = P.cs ? P.cs : shuffle(opts);
       out.display = fr.o[0]; out.answer = { d: fr.o[0], a: [fr.o[0]] };
@@ -269,7 +328,7 @@
     return n === 1;
   }
 
-  var EXTRA = { ind_pp: ['aux', 'infin', 'fc', 'fc'], ind_pres: ['fc', 'fc'], ind_imperf: ['fc', 'fc'], part_pass: [] };
+  var EXTRA = { ind_pp: ['aux', 'infin', 'fc', 'fc'], ind_pres: ['fc', 'fc'], ind_imperf: ['fc', 'fc'], ind_trap_pross: ['fc', 'fc'], imp_pres: ['ineg', 'ivar', 'ivar', 'ivarc', 'fc'], part_pass: [] };
   function rand(modId, opts) {
     opts = opts || {};
     var m = modOf(modId), t = pick(m.tenses), nf = isNF(t);
@@ -280,7 +339,17 @@
     var kind = pick(kinds), tries = 0, params, q;
     while (tries++ < 30) {
       var v = IT.find(pickVerb(t)), p = nf ? 0 : rnd(np(t)), gnd = !nf && needsG(v, t, p) ? pick(['m', 'f']) : null;
-      if (kind === 'fc') {
+      if (kind === 'ineg') {
+        var nv = IT.find(pickVerb('imp_pres'));
+        params = { mod: modId, t: t, kind: 'ineg', verb: nv.inf, p: pick([0, 2, 3, 0, 3, 1, 4]) };
+      } else if (kind === 'ivar' || kind === 'ivarc') {
+        var ib = g.SENTENCES_IMP || [];
+        if (!ib.length) { kind = 'conj'; continue; }
+        var ii = rnd(ib.length), ir = ib[ii], ivb = IT.find(ir[1]);
+        if (!ivb || !IT.impVar(ivb, ir[2], ir[3] || null, ir[4] || 0)) continue;
+        if (kind === 'ivarc' && !varChoices(ivb, ir[2], ir[3] || null, ir[4] || 0, IT.impVar(ivb, ir[2], ir[3] || null, ir[4] || 0))) kind = 'ivar';
+        params = { mod: modId, t: t, kind: kind, i: ii };
+      } else if (kind === 'fc') {
         var fcs = (g.SENTENCES_FC || []).map(function (r, i) { return r.m === modId ? i : -1; }).filter(function (i) { return i >= 0; });
         if (!fcs.length) { kind = 'conj'; continue; }
         params = { mod: modId, t: t, kind: 'fc', i: pick(fcs) };

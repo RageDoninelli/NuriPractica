@@ -130,13 +130,25 @@
     '<h3>Passato prossimo vs imperfetto</h3><p>El passato prossimo cuenta el hecho puntual y terminado; el imperfetto describe el fondo, la costumbre o lo que estaba pasando: <i>Mentre Silvia si trovava all\'ospedale, il padre era al lavoro e aspettava una telefonata. Appena è arrivata la buona notizia, si è alzato ed è uscito di corsa.</i></p>' +
     '<p>Los dos tiempos conviven en un mismo relato: <b>imperfetto</b> para describir la escena (tiempo, lugar, personas, estados de ánimo) y <b>passato prossimo</b> para los hechos que hacen avanzar la historia.</p>' });
 
-  add({ id: 'ind_trap_pross', grp: 'Indicativo', title: 'Trapassato prossimo', tenses: ['ind_trap_pross'], kind: 'fin',
+  add({ id: 'ind_trap_pross', grp: 'Indicativo', title: 'Trapassato prossimo', tenses: ['ind_trap_pross'], kind: 'fin', src: 'clase',
     theory:
-    '<h3>Formación</h3><p><b>Imperfetto de essere o avere + participio passato</b>: avevo mangiato, ero andato/a, mi ero alzato/a.</p>' +
-    '<p>La elección de ausiliare y la concordancia son las mismas que en el passato prossimo.</p>' +
-    '<h3>Usos</h3><ul><li>Acción pasada <b>anterior</b> a otra acción también pasada: <i>Quando sono arrivato, il film era già cominciato.</i></li>' +
-    '<li>Explica la causa de algo ocurrido en el pasado: <i>Ero stanco perché avevo lavorato tutto il giorno.</i></li>' +
-    '<li>Marcadores: già, appena, non… ancora, prima di, dopo che, quando.</li></ul>' +
+    '<h3>Uso</h3><p>El trapassato prossimo se usa para expresar <b>una acción en el pasado que sucedió antes de otra acción pasada</b>:</p>' +
+    '<ul><li><i>I miei nonni mi raccontavano sempre di quando <b>erano andati</b> in viaggio di nozze a Roma.</i> (prima: erano andati → dopo: mi raccontavano)</li>' +
+    '<li><i>Ugo ha detto a Paolo che <b>aveva visto</b> sua moglie con un altro uomo.</i> (prima: aveva visto → dopo: ha detto)</li>' +
+    '<li><i>Mario ha detto che <b>aveva mangiato</b> troppo e ha ordinato un digestivo.</i></li>' +
+    '<li><i>Quando sono arrivato alla stazione, il treno <b>era</b> già <b>partito</b>.</i></li></ul>' +
+    '<h3>Formación</h3><p>El trapassato prossimo se forma con el <b>imperfetto de avere o essere + el participio passato</b> del verbo.</p>' +
+    '<table><tr><th></th><th>imperfetto de avere + participio</th><th>imperfetto de essere + participio</th></tr>' +
+    '<tr><td>io</td><td>avevo parlato</td><td>ero andato/a</td></tr><tr><td>tu</td><td>avevi parlato</td><td>eri andato/a</td></tr>' +
+    '<tr><td>lui/lei/Lei</td><td>aveva parlato</td><td>era andato/a</td></tr><tr><td>noi</td><td>avevamo parlato</td><td>eravamo andati/e</td></tr>' +
+    '<tr><td>voi</td><td>avevate parlato</td><td>eravate andati/e</td></tr><tr><td>loro</td><td>avevano parlato</td><td>erano andati/e</td></tr></table>' +
+    '<p>La elección de <b>avere / essere</b> y la <b>concordancia</b> del participio son las mismas que en el passato prossimo. Reflexivos: <i>mi ero alzato/a, si erano conosciuti.</i></p>' +
+    '<h3>Para reconocerlo</h3><ul><li>Explica la causa de algo ocurrido en el pasado: <i>Ero stanco perché avevo lavorato tutto il giorno.</i></li>' +
+    '<li>Marcadores frecuentes: già, appena, non… ancora, prima di, dopo che, quando.</li></ul>' +
+    '<h3>Passato prossimo, imperfetto y trapassato prossimo en un mismo relato</h3>' +
+    '<ul><li><b>Trapassato prossimo</b>: lo que ocurrió <b>antes</b>: <i>Paolo aveva deciso di fare una sorpresa alla moglie.</i></li>' +
+    '<li><b>Imperfetto</b>: descripción, situación, costumbre: <i>Era l\'8 marzo. Voleva fare qualcosa di particolare.</i></li>' +
+    '<li><b>Passato prossimo</b>: los hechos que hacen avanzar la historia: <i>Sono andati in discoteca. Sono usciti.</i></li></ul>' +
     '<p>Equivale al pretérito pluscuamperfecto español: «había comido» → <i>avevo mangiato</i>.</p>' });
 
   add({ id: 'ind_pass_rem', grp: 'Indicativo', title: 'Passato remoto', tenses: ['ind_pass_rem'], kind: 'fin',

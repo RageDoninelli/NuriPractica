@@ -1,4 +1,4 @@
-/* Nuri practica — ejercicios del LIBRO DE CLASE: passato prossimo, presente regular e imperfetto.
+/* Nuri practica — ejercicios del LIBRO DE CLASE: passato prossimo, presente regular, imperfetto y trapassato prossimo.
    Formato de fila: [texto con ___, verbo, persona 0-5, género 'm'/'f'/null, ausiliare]
    · ausiliare: 'essere' | 'avere' | 'essere|avere' (acepta ambas, la primera es la principal).
    · En part_pass: [texto, verbo, respuestas|alternativas] (concordancia).
@@ -481,4 +481,82 @@
   fct("ind_pp", "Monica ___ che non poteva venire.", "ha risposto", "rispondeva", DEL);
   fct("ind_imperf", "Il figlio ha risposto che non ___ dove era la madre.", "sapeva", "ha saputo", DES);
   fct("ind_pp", "Carla ___ una delle più belle domeniche degli ultimi anni.", "ha passato", "passava", DEL);
+
+  /* =================== TRAPASSATO PROSSIMO (libro) =================== */
+  S.ind_trap_pross = S.ind_trap_pross.concat([
+    /* — teoría — */
+    ["I miei nonni mi raccontavano sempre di quando ___ (andare) in viaggio di nozze a Roma.", "andare", 5, "m"],
+    ["Ugo ha detto a Paolo che ___ (vedere) sua moglie con un altro uomo.", "vedere", 2],
+    ["Mario ha detto che ___ (mangiare) troppo e ha ordinato un digestivo.", "mangiare", 2],
+    ["Quando sono arrivato alla stazione, il treno ___ (partire) da due minuti.", "partire", 2, "m"],
+    /* — Ej. 1 · preguntas y respuestas — */
+    ["Ha detto che la sera prima a una festa ___ (bere) troppo e non stava bene.", "bere", 2],
+    ["Quando sei arrivato, lui ___ (andare) via da un'ora.", "andare", 2, "m"],
+    ["Lo so, ma io ___ (mangiare) davvero troppo!", "mangiare", 0],
+    ["L'ho venduta. ___ (fare) troppi chilometri ormai e non andava più bene.", "fare", 2],
+    ["Nello stesso albergo dove io ___ (stare) l'anno scorso.", "stare", 0],
+    ["Mi hanno detto che non l'hanno sentito perché loro ___ (andare) a dormire.", "andare", 5],
+    ["No, noi ___ (lavorare) troppo e così siamo andati a casa.", "lavorare", 3],
+    ["Sì, io ___ (comprare) anche il biglietto, ma poi mio padre è stato male e non sono più partito.", "comprare", 0],
+    /* — Ej. 2 · i signori Fiore — */
+    ["Quando sono tornati dalle vacanze, i signori Fiore hanno trovato che Rita ___ (dimenticarsi) di dare l'acqua alle piante.", "dimenticarsi", 2, "f"],
+    ["Hanno trovato che Dario non ___ (tornare) mai a casa a dormire.", "tornare", 2, "m"],
+    ["Hanno trovato che nessuno ___ (lavare) i piatti.", "lavare", 2],
+    ["Hanno trovato che nessuno aveva lavato i piatti né ___ (portare) fuori il cane.", "portare", 2],
+    ["La casa era un disastro perché sabato sera i ragazzi ___ (organizzare) una cena per gli amici.", "organizzare", 5],
+    ["I ragazzi avevano organizzato una cena e ___ (ballare) tutta la notte.", "ballare", 5],
+    ["I ragazzi avevano ballato e ___ (giocare) tutta la notte.", "giocare", 5],
+    ["I ragazzi avevano giocato e ___ (guardare) video tutta la notte.", "guardare", 5],
+    ["La donna delle pulizie ___ (rifiutarsi) di andare a pulire la casa.", "rifiutarsi", 2, "f"],
+    ["Ognuno ha dato la colpa all'altro dicendo: «___ (dire) che ci pensava lui!»", "dire", 2],
+    /* — Ej. 4 · Paolo e Teresa — */
+    ["Lunedì scorso era l'8 marzo, la festa della donna, e Paolo ___ (decidere) di fare una sorpresa alla moglie Teresa.", "decidere", 2],
+    ["Prima Paolo ___ (pensare) di prenotare un tavolo in un ristorantino romantico, ma poi ci aveva ripensato.", "pensare", 2],
+    ["Paolo ci aveva ripensato perché ___ (ricordarsi) che erano andati anche l'anno prima.", "ricordarsi", 2, "m"],
+    ["Paolo si era ricordato che loro ___ (andare) anche l'anno prima.", "andare", 5, "m"],
+    ["L'aveva portata a ballare nella discoteca dove loro ___ (conoscersi) anni fa.", "conoscersi", 5],
+    ["Paolo e Teresa sono andati in una pizzeria che loro ___ (vedere) dietro l'angolo, prima di entrare in discoteca.", "vedere", 5],
+    /* — Ej. 5 · unir las frases — */
+    ["Ho deciso di non andare a teatro: io ___ (vedere) già quella commedia qualche anno fa.", "vedere", 0],
+    ["Abbiamo dovuto ripetere l'esame perché noi non ___ (passare) l'esame la prima volta.", "passare", 3],
+    ["Barbara è tornata a casa perché ___ (dimenticare) il cellulare.", "dimenticare", 2],
+    ["Non trovavo più le chiavi: ___ (finire) in fondo alla borsa e non le vedevo.", "finire", 5, "f", "essere"],
+    ["Alla fine Paolo e Franco non sono partiti, visto che ___ (dimenticare) di fare il visto.", "dimenticare", 5],
+    ["La cena da nonna è stata eccezionale: lei ___ (preparare) il suo ottimo arrosto.", "preparare", 2],
+    ["Il progetto con Anna è durato molto di più del previsto: io ___ (dimenticare) quanto è pignola!", "dimenticare", 0],
+    ["Non sono riuscita a vedere Elena: quando sono arrivata a casa sua lei ___ (uscire) da pochi minuti.", "uscire", 2, "f"],
+    /* — Ej. 7 · curiosidades (el título del romanzo) — */
+    ["Dopo la Seconda Guerra Mondiale la città di Latina ha cambiato il nome che le ___ (dare) il governo fascista.", "dare", 2],
+    ["Maria Montessori, prima di occuparsi dei bambini, ___ (laurearsi) in Medicina a Roma.", "laurearsi", 2, "f"],
+    ["A Bari è stata costruita la Basilica di San Nicola per custodire le reliquie del Santo, che ___ (arrivare) pochi anni prima dalla Turchia.", "arrivare", 2, "m"],
+    ["Il conte Negroni ___ (stancarsi) del solito cocktail e ne ha inventato uno nuovo.", "stancarsi", 2, "m"],
+    ["A Terni è stata costruita la Basilica di San Valentino per il corpo del martire cristiano, che ___ (essere) il vescovo della città.", "essere", 2, "m"],
+    ["Cristoforo Colombo, prima di prendere il mare, ___ (lavorare) per molti anni in una scuola.", "lavorare", 2],
+    ["Prima di diventare italiana, la Sardegna ___ (avere) un breve periodo di indipendenza.", "avere", 2],
+    ["Venezia è riuscita a proteggersi dai Turchi anche perché nel 1593 ___ (costruire) la città fortezza di Palmanova.", "costruire", 2]
+  ]);
+
+  /* ---- Trapassato prossimo: elegir la forma (sin pista del tiempo) ---- */
+  function fctp(t, text, a, b, w) { FC.push({ m: "ind_trap_pross", t: t, text: text, o: [a, b], h: 1, w: w }); }
+  var ANT = "Acción pasada anterior a otra acción también pasada → trapassato prossimo (imperfetto de avere/essere + participio).";
+  fctp("ind_trap_pross", "Quando sono arrivato alla stazione, il treno ___ già.", "era partito", "è partito", ANT);
+  fctp("ind_trap_pross", "Ugo ha detto a Paolo che ___ sua moglie con un altro uomo.", "aveva visto", "ha visto", ANT);
+  fctp("ind_trap_pross", "Mario ha detto che ___ troppo e ha ordinato un digestivo.", "aveva mangiato", "mangiava", ANT);
+  fctp("ind_trap_pross", "I miei nonni mi raccontavano sempre di quando ___ in viaggio di nozze a Roma.", "erano andati", "andavano", "«Prima: erano andati → dopo: mi raccontavano». " + ANT);
+  fctp("ind_trap_pross", "Una mia amica mi ha telefonato e mi ha detto che ___ il mio ragazzo con un'altra in discoteca.", "aveva visto", "vedeva", ANT);
+  fctp("ind_trap_pross", "Quando gli ho chiesto cosa ___ la sera prima, lui mi ha detto che era rimasto a casa.", "aveva fatto", "ha fatto", ANT);
+  fctp("ind_trap_pross", "Lui mi ha detto che ___ a casa perché non si sentiva molto bene.", "era rimasto", "rimaneva", ANT);
+  fctp("ind_pp", "Io non ___ il coraggio di dirgli che sapevo dove era andato.", "ho avuto", "avevo avuto", "Hecho puntual de ahora, no anterior a otro hecho pasado → passato prossimo.");
+  fctp("ind_trap_pross", "Mi ha confermato che ___ altri due fidanzati prima di me.", "aveva avuto", "ha avuto", ANT);
+  fctp("ind_trap_pross", "Mi ha detto che molte ragazze gli ___ soldi nello slip.", "avevano messo", "mettevano", ANT);
+  fctp("ind_pp", "Qualche mese fa ho incontrato un ragazzo bellissimo e ___.", "mi sono innamorata", "mi ero innamorata", "Hecho puntual del pasado sin otra acción anterior → passato prossimo.");
+  fctp("ind_trap_pross", "Lunedì scorso Paolo ___ di fare una sorpresa alla moglie Teresa.", "aveva deciso", "ha deciso", "La decisión es anterior a lo que cuenta después (la sorpresa) → trapassato prossimo.");
+  fctp("ind_imperf", "Paolo ___ fare qualcosa di particolare, qualcosa di diverso dal solito.", "voleva", "aveva voluto", "Deseo/intención en el pasado → imperfetto.");
+  fctp("ind_trap_pross", "Prima ___ di prenotare un tavolo, ma poi ci aveva ripensato.", "aveva pensato", "pensava", ANT);
+  fctp("ind_imperf", "La discoteca, che una volta ___ «Il Gatto Nero», ora si chiama «La Baracca».", "si chiamava", "si era chiamata", "Costumbre/estado de una época del pasado → imperfetto.");
+  fctp("ind_imperf", "Quando ancora ___ l'università, andavano in quella discoteca.", "facevano", "avevano fatto", "Acción continuada en el pasado → imperfetto.");
+  fctp("ind_trap_pross", "Quando sono tornati dalle vacanze, hanno trovato che Rita ___ di dare l'acqua alle piante.", "si era dimenticata", "si dimenticava", ANT);
+  fctp("ind_trap_pross", "Non sono riuscita a vedere Elena: quando sono arrivata a casa sua lei ___ già.", "era uscita", "è uscita", ANT);
+  fctp("ind_trap_pross", "Abbiamo dovuto ripetere l'esame perché non lo ___ la prima volta.", "avevamo passato", "abbiamo passato", ANT);
+  fctp("ind_trap_pross", "Alla fine Paolo e Franco non sono partiti, visto che ___ di fare il visto.", "avevano dimenticato", "dimenticavano", ANT);
 })(typeof window !== 'undefined' ? window : globalThis);

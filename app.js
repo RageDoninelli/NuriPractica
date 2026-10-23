@@ -47,7 +47,7 @@
   function $(sel, el) { return (el || root).querySelector(sel); }
   function modById(id) { return Q.modOf(id); }
   function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
-  var KIND = { conj: 'Conjugación', choice: 'Elige la correcta', sent: 'Completa la frase', sentc: 'Frase · elige', trans: 'Transformación', ident: 'Identifica el tiempo', table: 'Tabla completa', fc: 'Avere o essere · elige', aux: 'Avere o essere', infin: 'Infinitivo' };
+  var KIND = { conj: 'Conjugación', choice: 'Elige la correcta', sent: 'Completa la frase', sentc: 'Frase · elige', trans: 'Transformación', ident: 'Identifica el tiempo', table: 'Tabla completa', fc: 'Elige la forma', aux: 'Avere o essere', infin: 'Infinitivo', ineg: 'Imperativo negativo', ivar: 'Imperativo · completa', ivarc: 'Imperativo · elige' };
 
   /* ---------- vista actual ---------- */
   var V = { name: 'home' }, sess = null, scrollTop = true;

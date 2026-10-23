@@ -202,6 +202,14 @@
     { inf: 'piovere', es: 'llover', aux: 'essere', pp: 'piovuto', pr: 'piov', noRand: 1, noImp: 1, ppres: null, irr: 1 },
     { inf: 'ritrovarsi', es: 'encontrarse (reunirse)' }, { inf: 'trovarsi', es: 'encontrarse (estar)' },
     { inf: 'scusarsi', es: 'disculparse' }, { inf: 'circondarsi', es: 'rodearse' }, { inf: 'congratularsi', es: 'felicitar' },
+    /* — trapassato prossimo e imperativo (libro) — */
+    { inf: 'prestare', es: 'prestar' }, { inf: 'prenotare', es: 'reservar' }, { inf: 'ruttare', es: 'eructar' },
+    { inf: 'evitare', es: 'evitar' }, { inf: 'lavare', es: 'lavar' }, { inf: 'usare', es: 'usar' }, { inf: 'avvisare', es: 'avisar' },
+    { inf: 'rilassarsi', es: 'relajarse' }, { inf: 'dimenticarsi', es: 'olvidarse' }, { inf: 'rifiutarsi', es: 'negarse' },
+    { inf: 'preoccuparsi', es: 'preocuparse' }, { inf: 'fidarsi', es: 'fiarse' }, { inf: 'stancarsi', es: 'cansarse' },
+    { inf: 'muoversi', es: 'moverse', pp: 'mosso', pres: 'mi muovo ti muovi si muove ci muoviamo vi muovete si muovono', pr: 'mos', irr: 1 },
+    { inf: 'togliere', es: 'quitar', pp: 'tolto', pres: 'tolgo togli toglie togliamo togliete tolgono', pr: 'tols', irr: 1 },
+    { inf: 'spingere', es: 'empujar', pp: 'spinto', pr: 'spins', ppres: 'spingente', irr: 1 },
     { inf: 'farsi', es: 'hacerse', pp: 'fatto', pres: 'faccio fai fa facciamo fate fanno', imp: 'fac',
       pr: 'feci facesti fece facemmo faceste fecero', fut: 'far', cp: 'faccia faccia faccia facciamo facciate facciano', irr: 1 }
   ];

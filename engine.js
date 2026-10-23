@@ -242,11 +242,55 @@
     return 'no';
   }
 
+  /* Imperativo: negativo y pronombres/partículas pegados.
+     p: 0 tu, 1 Lei, 2 noi, 3 voi, 4 Loro · cl: mi ti lo la li le ci vi ne gli loro (o null)
+     neg: 0 afirmativo · 1 negativo completo («non …») · 2 negativo sin «non» (la frase ya lo trae) */
+  function impVar(v, p, cl, neg) {
+    prep(v);
+    var base = forms(v, 'imp_pres');
+    if (!base || !base[p]) return null;
+    var e = base[p], a = e.a.slice(), orig = e.a.slice(), out = [], inf = v.inf, i;
+    var rre = /rre$/.test(inf);
+    function infB(x) { return rre ? x.slice(0, -2) : x.slice(0, -1); }   // inf sin la -e final (por-, tradur-)
+    function dbl(c) { return c === 'gli' ? 'gli' : c.charAt(0) + c; }
+    if (!neg) {
+      if (!cl || v.refl) return ent(a);
+      var ap = a.filter(function (x) { return /'$/.test(x); });
+      if (p === 0 && ap.length) a = ap;
+      a.forEach(function (b) {
+        if (cl === 'loro') { /* se resuelve abajo */ }
+        else if (/'$/.test(b)) out.push(b.slice(0, -1) + dbl(cl));
+        else out.push(b + cl);
+      });
+      if (cl === 'loro') orig.forEach(function (b) { out.push(b + ' loro'); });
+      return ent(uniqS(out));
+    }
+    var pre = neg === 1 ? 'non ' : '';
+    if (v.refl) {
+      var bI = infB(v._b);                       // alzar-
+      var d0 = e.d;
+      if (p === 0) out = ['ti ' + v._b, bI + 'ti'];
+      else if (p === 2) { var n2 = d0.slice(0, -2); out = ['ci ' + n2, n2 + 'ci']; }
+      else if (p === 3) { var n3 = d0.slice(0, -2); out = ['vi ' + n3, n3 + 'vi']; }
+      else out = [d0];
+    } else if (p === 0) {
+      if (!cl) out = [inf];
+      else if (cl === 'loro') out = [inf + ' loro'];
+      else out = [cl + ' ' + inf, infB(inf) + cl];
+    } else if (p === 2 || p === 3) {
+      a.forEach(function (b) {
+        if (!cl) out.push(b); else if (cl === 'loro') out.push(b + ' loro'); else { out.push(cl + ' ' + b); out.push(b + cl); }
+      });
+    } else out = a;
+    return ent(uniqS(out.map(function (x) { return pre + x; })));
+  }
+  function uniqS(l) { var s = {}, o = []; l.forEach(function (x) { if (!s[x]) { s[x] = 1; o.push(x); } }); return o; }
+
   function find(inf) { return byInf[inf]; }
   function load(list) { list.forEach(function (v) { prep(v); byInf[v.inf] = v; }); }
 
   g.IT = {
     P: P, IP: IP, RP: RP, TENSES: TENSES, NONFIN: NONFIN, COMPOUND: COMPOUND,
-    forms: forms, nonfinite: nonfinite, check: check, norm: norm, find: find, load: load, prep: prep, join: join
+    forms: forms, impVar: impVar, nonfinite: nonfinite, check: check, norm: norm, find: find, load: load, prep: prep, join: join
   };
 })(typeof window !== 'undefined' ? window : globalThis);

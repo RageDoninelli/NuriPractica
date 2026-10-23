@@ -115,20 +115,45 @@
     '<li>Noticia no confirmada en el pasado: <i>Secondo la polizia, il ladro sarebbe fuggito.</i></li></ul>' });
 
   /* ================= IMPERATIVO ================= */
-  add({ id: 'imp_pres', grp: 'Imperativo', title: 'Imperativo presente', tenses: ['imp_pres'], kind: 'imp',
+  add({ id: 'imp_pres', grp: 'Imperativo', title: 'Imperativo presente', tenses: ['imp_pres'], kind: 'imp', src: 'clase',
     theory:
+    '<h3>Imperativo diretto (tu · noi · voi)</h3>' +
+    '<p>El imperativo diretto se usa para <b>dar órdenes o consejos</b>: <i>Aprite la finestra, fa caldo! · Per andare a Firenze, prendi il treno, non la macchina.</i></p>' +
+    '<p>El imperativo de <b>tu, noi y voi</b> es normalmente <b>igual al presente indicativo</b> del verbo:</p>' +
+    '<ul><li><i>Telefoniamo a Fabio! · Comprate quel libro. È bellissimo! · Metti a posto quel libro! · Vediamo quel film che è più interessante. · Chiudete la porta, per favore. Fa freddo. · Finisci di studiare! · Partiamo domani. · Pulite la cucina dopo che l\'avete usata.</i></li></ul>' +
+    '<p>El imperativo de la <b>2ª persona singolare (tu)</b> de los verbos en <b>-are</b>, en cambio, termina en <b>-a</b>: <i>Parla più lentamente che non capisco. · Mangia la frutta che ti fa bene! · Scusa, ma non posso venire con te oggi.</i></p>' +
     '<h3>Formación</h3>' +
-    '<table><tr><th></th><th>-ARE</th><th>-ERE</th><th>-IRE</th><th>-IRE (-isc-)</th></tr>' +
-    '<tr><td>tu</td><td>parl<b>a</b></td><td>vend<b>i</b></td><td>dorm<b>i</b></td><td>fin<b>isci</b></td></tr>' +
-    '<tr><td>Lei</td><td>parl<b>i</b></td><td>vend<b>a</b></td><td>dorm<b>a</b></td><td>fin<b>isca</b></td></tr>' +
-    '<tr><td>noi</td><td>parl<b>iamo</b></td><td>vend<b>iamo</b></td><td>dorm<b>iamo</b></td><td>fin<b>iamo</b></td></tr>' +
-    '<tr><td>voi</td><td>parl<b>ate</b></td><td>vend<b>ete</b></td><td>dorm<b>ite</b></td><td>fin<b>ite</b></td></tr>' +
-    '<tr><td>Loro</td><td>parl<b>ino</b></td><td>vend<b>ano</b></td><td>dorm<b>ano</b></td><td>fin<b>iscano</b></td></tr></table>' +
-    '<p>El imperativo tiene forma propia solo en <b>tu, noi y voi</b>. Lei y Loro (formas de cortesía) toman el congiuntivo presente. En <b>noi</b> equivale a «vamos a…».</p>' +
-    '<h3>Irregulares (tu / Lei / noi / voi / Loro)</h3>' +
-    '<ul><li><b>essere</b>: sii · sia · siamo · siate · siano</li><li><b>avere</b>: abbi · abbia · abbiamo · abbiate · abbiano</li><li><b>andare</b>: va\' / vai · vada · andiamo · andate · vadano</li><li><b>fare</b>: fa\' / fai · faccia · facciamo · fate · facciano</li><li><b>dare</b>: da\' / dai · dia · diamo · date · diano</li><li><b>stare</b>: sta\' / stai · stia · stiamo · state · stiano</li><li><b>dire</b>: di\' · dica · diciamo · dite · dicano</li><li><b>sapere</b>: sappi · sappia · sappiamo · sappiate · sappiano</li><li><b>venire</b>: vieni · venga · veniamo · venite · vengano</li><li><b>uscire</b>: esci · esca · usciamo · uscite · escano</li></ul>' +
-    '<h3>Negativo</h3><ul><li><b>tu</b>: <b>non + infinitivo</b>: <i>Non parlare! Non mangiare!</i></li><li>Lei, noi, voi, Loro: simplemente <b>non</b> + la misma forma: <i>Non parli. Non mangiate.</i></li></ul>' +
-    '<h3>Con pronombres</h3><ul><li><b>tu, noi, voi</b>: pronombres <b>pegados</b> al final: <i>Alzati! Alziamoci! Alzatevi! Dimmi! Dallo!</i> (con va\', fa\', da\', sta\', di\' se duplica la consonante: <i>dammi, dimmi, fallo, dillo</i>; excepto con gli).</li><li><b>Lei y Loro</b>: pronombre <b>antes</b>: <i>Si accomodi! Mi dica!</i></li><li>En negativo con tu, el pronombre puede ir antes o pegado: <i>Non ti alzare / Non alzarti.</i></li></ul>' });
+    '<table><tr><th></th><th>am-are</th><th>ved-ere</th><th>apr-ire</th><th>fin-ire (-isc-)</th></tr>' +
+    '<tr><td>tu</td><td>am<b>a</b></td><td>ved<b>i</b></td><td>apr<b>i</b></td><td>fin<b>isci</b></td></tr>' +
+    '<tr><td>(Lei)</td><td>am<b>i</b></td><td>ved<b>a</b></td><td>apr<b>a</b></td><td>fin<b>isca</b></td></tr>' +
+    '<tr><td>noi</td><td>am<b>iamo</b></td><td>ved<b>iamo</b></td><td>apr<b>iamo</b></td><td>fin<b>iamo</b></td></tr>' +
+    '<tr><td>voi</td><td>am<b>ate</b></td><td>ved<b>ete</b></td><td>apr<b>ite</b></td><td>fin<b>ite</b></td></tr>' +
+    '<tr><td>(Loro)</td><td>am<b>ino</b></td><td>ved<b>ano</b></td><td>apr<b>ano</b></td><td>fin<b>iscano</b></td></tr></table>' +
+    '<p>Lei y Loro (cortesía) toman el congiuntivo presente. En <b>noi</b> equivale a «vamos a…».</p>' +
+    '<h3>Verbos con imperativo irregular</h3>' +
+    '<table><tr><th></th><th>tu</th><th>voi</th></tr>' +
+    '<tr><td>essere</td><td><b>sii</b></td><td><b>siate</b></td></tr><tr><td>avere</td><td><b>abbi</b></td><td><b>abbiate</b></td></tr><tr><td>sapere</td><td><b>sappi</b></td><td><b>sappiate</b></td></tr></table>' +
+    '<p>Los verbos <b>avere, essere y sapere</b> tienen el imperativo irregular en la 2ª persona singular (tu) y en la 2ª persona plural (voi). (noi: abbiamo, siamo, sappiamo.)</p>' +
+    '<table><tr><th></th><th>tu</th></tr>' +
+    '<tr><td>andare</td><td><b>va\' / vai</b></td></tr><tr><td>dare</td><td><b>da\' / dai</b></td></tr><tr><td>fare</td><td><b>fa\' / fai</b></td></tr><tr><td>stare</td><td><b>sta\' / stai</b></td></tr><tr><td>dire</td><td><b>di\'</b></td></tr></table>' +
+    '<p>Los verbos <b>andare, dare, fare y stare</b> tienen una <b>doble forma</b> para el imperativo de 2ª persona singular (tu). El verbo <b>dire</b>, en cambio, tiene una sola forma: <b>di\'</b>. (voi: andate, date, fate, state, dite.) Otros irregulares: <b>venire</b> vieni · <b>uscire</b> esci · <b>tenere</b> tieni.</p>' +
+    '<h3>Imperativo diretto negativo</h3>' +
+    '<p>El imperativo negativo es normalmente igual a la <b>forma negativa del presente indicativo</b>: <i>Non telefoniamo a Fabio, è antipatico. · Non comprate quel libro. È davvero brutto! · Non vediamo quel film, è noiosissimo! · Non chiudete la porta per favore. Fa caldo. · Non partiamo domani. C\'è troppo traffico. · Non pulite la cucina. Lo faccio io.</i></p>' +
+    '<p>La <b>2ª persona singolare (tu)</b>, en cambio, se forma con <b>non + el infinitivo del verbo</b>: <i>Non parlare così veloce che non capisco. · Non mettere a posto quel libro! · Non finire di studiare!</i></p>' +
+    '<table><tr><th></th><th>am-are</th><th>ved-ere</th><th>apr-ire</th></tr>' +
+    '<tr><td>tu</td><td>non am<b>are</b></td><td>non ved<b>ere</b></td><td>non apr<b>ire</b></td></tr>' +
+    '<tr><td>noi</td><td>non am<b>iamo</b></td><td>non ved<b>iamo</b></td><td>non apr<b>iamo</b></td></tr>' +
+    '<tr><td>voi</td><td>non am<b>ate</b></td><td>non ved<b>ete</b></td><td>non apr<b>ite</b></td></tr></table>' +
+    '<h3>Imperativo diretto y pronombres</h3>' +
+    '<p>Los pronombres directos, indirectos y combinados y las partículas <b>ci</b> y <b>ne</b> van <b>siempre unidos, como sufijo</b>, al imperativo diretto: <i>Andiamoci! · Guardali! · Compralo subito! · Parlatene! · Ditemi!</i></p>' +
+    '<p>Con los verbos irregulares <b>andare, dare, fare, stare, dire</b>, los pronombres y las partículas <b>duplican la consonante inicial</b>: <i>Non sei andato alla biblioteca? <b>Vacci</b> domani. · <b>Dammi</b> una mano a cucinare, per favore. · Se non lo usi, <b>fanne</b> quello che vuoi. · Maria è molto malata, <b>stalle</b> vicino. · Che c\'è, cara? <b>Dimmi</b> tutto!</i></p>' +
+    '<p>Con el pronombre <b>gli</b> no hay duplicación: <i>Va\' da tuo padre e <b>digli</b> tutto.</i> (También: <i>fagli, dagli</i>.)</p>' +
+    '<p>Con <b>loro</b> no se pega el pronombre: <i>da\' loro · fa\' loro · di\' loro</i>.</p>' +
+    '<p>Cuando el imperativo diretto es <b>negativo</b> hay <b>dos posibilidades</b>:</p>' +
+    '<ul><li><b>a)</b> la partícula o el pronombre <b>precede</b> al imperativo: <i>Non ti piace il vino? Allora non <b>lo</b> bere! · Il cinema è pieno. Non <b>ci</b> andiamo! · Quel formaggio non è fresco. Non <b>lo</b> comprate!</i></li>' +
+    '<li><b>b)</b> la partícula o el pronombre <b>se une</b> al imperativo: <i>Allora non berlo! · Non andiamoci! · Non compratelo!</i></li></ul>' +
+    '<h3>Reflexivos</h3><p>También van pegados: <i>Alzati! Alziamoci! Alzatevi!</i> Negativo: <i>Non ti alzare / Non alzarti.</i></p>' +
+    '<h3>Lo sai che…</h3><p>Cuando se quiere dar una orden o sugerir un comportamiento <b>general</b> (por ejemplo en las etiquetas de algunos productos) se usa a menudo el <b>infinitivo</b>, que funciona como un imperativo impersonal: <i>Conservare al fresco</i> (en un envase de comida). <i>Prendere dopo i pasti</i> (en una medicina).</p>' });
 
   /* ================= FORMAS NO PERSONALES ================= */
   add({ id: 'inf_pres', grp: 'Infinito', title: 'Infinito presente', tenses: ['inf_pres'], kind: 'nf',
